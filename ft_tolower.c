@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzisis-p <yzisis-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 19:15:20 by yzisis-p          #+#    #+#             */
-/*   Updated: 2022/07/18 19:15:25 by yzisis-p         ###   ########.fr       */
+/*   Created: 2022/05/17 20:22:18 by yzisis-p          #+#    #+#             */
+/*   Updated: 2022/05/19 19:23:02 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_tolower(int c)
 {
-	int	i;
-
-	i = 0;
-	i = ft_strlen(s);
-	if (!s)
-		return (NULL);
-	if ((char)c == '\0')
+	if (c >= 'A' && c <= 'Z')
 	{
-		return ((char *)(s + i));
+		c = c + 32;
 	}
-	while (*s != '\0')
-	{
-		if ((char)c == *s)
-		{
-			return ((char *)s);
-		}
-		s++;
-	}
-	return (NULL);
+	return (c);
 }

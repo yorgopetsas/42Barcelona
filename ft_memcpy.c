@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzisis-p <yzisis-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 19:15:20 by yzisis-p          #+#    #+#             */
-/*   Updated: 2022/07/18 19:15:25 by yzisis-p         ###   ########.fr       */
+/*   Created: 2022/05/14 01:17:12 by yzisis-p          #+#    #+#             */
+/*   Updated: 2022/05/14 01:17:14 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memcpy(void *dest, const void *src, size_t count)
 {
-	int	i;
+	int					i;
+	const unsigned char	*a;
+	unsigned char		*b;
 
 	i = 0;
-	i = ft_strlen(s);
-	if (!s)
-		return (NULL);
-	if ((char)c == '\0')
+	a = (unsigned char *)src;
+	b = (unsigned char *)dest;
+	if (a == 0 && b == 0)
 	{
-		return ((char *)(s + i));
+		return (dest);
 	}
-	while (*s != '\0')
+	while (count > 0)
 	{
-		if ((char)c == *s)
-		{
-			return ((char *)s);
-		}
-		s++;
+		b[i] = a[i];
+		i++;
+		count--;
 	}
-	return (NULL);
+	return (dest);
 }

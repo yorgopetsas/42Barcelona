@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzisis-p <yzisis-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 19:15:20 by yzisis-p          #+#    #+#             */
-/*   Updated: 2022/07/18 19:15:25 by yzisis-p         ###   ########.fr       */
+/*   Created: 2022/07/26 18:09:10 by yzisis-p          #+#    #+#             */
+/*   Updated: 2022/07/26 18:09:12 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strdup(const char *s)
 {
-	int	i;
+	char	*ns;
+	int		i;
 
 	i = 0;
-	i = ft_strlen(s);
-	if (!s)
+	ns = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!ns)
 		return (NULL);
-	if ((char)c == '\0')
+	while (s[i])
 	{
-		return ((char *)(s + i));
+		ns[i] = s[i];
+		i++;
 	}
-	while (*s != '\0')
-	{
-		if ((char)c == *s)
-		{
-			return ((char *)s);
-		}
-		s++;
-	}
-	return (NULL);
+	ns[i] = '\0';
+	return (ns);
 }
