@@ -11,14 +11,24 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	yz_numlen(int n)
+static char	*yz_itoa(char *c, unsigned int num, long int cnt)
+{
+	while (num > 0)
+	{
+		c[cnt--] = 48 + (num % 10);
+		num = num / 10;
+	}
+	return (c);
+}
+
+static long int	yz_len(int n)
 {
 	int	intlen;
 
 	intlen = 0;
-	if (n < 0)
-		n = n * -1;
-	while (n > 0)
+	if (n <= 0)
+		intlen = 1;
+	while (n != 0)
 	{
 		n = n / 10;
 		intlen++;
@@ -26,100 +36,29 @@ int	yz_numlen(int n)
 	return (intlen);
 }
 
-int	yz_isneg(int n)
-{
-	int	isneg;
-
-	isneg = 1;
-	if (n < 0)
-		isneg = -1;
-	if (n == 0 )
-		isneg = 0;
-	return (isneg);
-}
-
-static char	*ft_strrev(char *str, int n)
-{
-	int i;
-	int j;
-	int tmp;
-
-	i = 0;
-	j = yz_numlen(n);
-	while (j > i)
-	{
-		j--;
-		tmp = str[i];
-		str[i] = str[j];
-		str[j] = tmp;
-		i++;
-	}
-	return str;
-}
-
-char	yz_iszero(int isneg)
-{
-	if (isneg == 0)
-	{
-		return ('0');
-	}
-	return ('0');
-}
-
 char	*ft_itoa(int n)
 {
-	char		*c;
-	int			i;
-	int			cnt;
-	int			isneg;
-	long int	num;
+	char			*c;
+	long int		cnt;
+	unsigned int	num;
+	int				isneg;
 
-	i = 0;
-	num = n;
-	cnt = yz_numlen(n);
-	isneg = yz_isneg(n);
-	c = (char *)malloc(sizeof(char *) * (cnt + 1));
+	isneg = 1;
+	cnt = yz_len(n);
+	c = (char *)malloc(sizeof(char) * (cnt + 1));
 	if (!c)
 		return (NULL);
-	if (isneg == 0)
+	c[cnt--] = '\0';
+	if (n == 0)
+		c[0] = '0';
+	if (n < 0)
 	{
-		c[i] = '0';
-		i++;
+		isneg *= -1;
+		num = n * -1;
+		c[0] = '-';
 	}
-	while (i < cnt && num != 0)
-	{
-		
-		if (isneg < 0)
-		{
-			c[0] = '-';
-			i++;
-		}
-		if (num < 10 && num > -10)
-		{
-// 			if (isneg < 0)
-// 			{
-// 				num = num * -1;
-// 				c[0] = '-';
-// 				i++;
-// 			}
-// 			c[i] = num % 10 + 48;
-			c[i] = num + '0';
-			i++;
-		}
-		else
-		{
-// 			if (isneg < 0)
-// 			{
-// 				num = num * -1;
-// 				c[0] = '-';
-// 				i++;
-// 			}
-			c[i++] = num % 10 + 48;
-			num /= 10;
-		}
-	}
-	if (n > 0)
-		c = ft_strrev(c, n);
-	c[i] = '\0';
+	else
+		num = n;
+	c = yz_itoa(c, num, cnt);
 	return (c);
 }
