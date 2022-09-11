@@ -11,16 +11,16 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	yz_numlen(int ns)
+int	yz_numlen(int n)
 {
 	int	intlen;
 
 	intlen = 0;
-	if (ns < 0)
-		ns = ns * -1;
-	while (ns > 0)
+	if (n < 0)
+		n = n * -1;
+	while (n > 0)
 	{
-		ns = ns / 10;
+		n = n / 10;
 		intlen++;
 	}
 	return (intlen);
@@ -33,66 +33,93 @@ int	yz_isneg(int n)
 	isneg = 1;
 	if (n < 0)
 		isneg = -1;
+	if (n == 0 )
+		isneg = 0;
 	return (isneg);
-	
+}
+
+static char	*ft_strrev(char *str, int n)
+{
+	int i;
+	int j;
+	int tmp;
+
+	i = 0;
+	j = yz_numlen(n);
+	while (j > i)
+	{
+		j--;
+		tmp = str[i];
+		str[i] = str[j];
+		str[j] = tmp;
+		i++;
+	}
+	return str;
+}
+
+char	yz_iszero(int isneg)
+{
+	if (isneg == 0)
+	{
+		return ('0');
+	}
+	return ('0');
 }
 
 char	*ft_itoa(int n)
 {
-	char	*c;
-	int	i;
-	int	mpl;
-	int	intlen;
-	int	ns;
+	char		*c;
+	int			i;
+	int			cnt;
+	int			isneg;
+	long int	num;
 
 	i = 0;
-	intlen = 0;
-	ns = n;
-	mpl = yz_isneg(n);
-	intlen = yz_numlen(ns);
-	c = (char *)malloc(sizeof(char *) * intlen + 1);
+	num = n;
+	cnt = yz_numlen(n);
+	isneg = yz_isneg(n);
+	c = (char *)malloc(sizeof(char *) * (cnt + 1));
 	if (!c)
 		return (NULL);
-	if (n < 0 && n > -10)
+	if (isneg == 0)
 	{
-		c[i] = '-';
-		n = n * mpl;
-		c[i + 1] = n % 10 + 48;
-// 		printf("C [i] is %s\n", c);
-		return (c);
-	}
-	if (ns < 10 && n > 0)
-	{
-		c[i] = ns + 48;
-// 		printf("C [i] is %s\n", c);
-		return (c);
-	}
-// 	printf("Multiplier is %d\nIntLen is %d\n", mpl, intlen);
-	while (i < intlen)
-	{
-		if (mpl < 0 && ns > -10)
-		{
-			n = n * mpl;
-			c[i] = '-';
-			c[i + 1] = n % 10 + 48;
-			i++;
-			printf("C [i] is %s\n", c);
-			return (c);
-		}
-		c[intlen - i - 1] = ns % 10 + 48;
-		ns = ns / 10;
+		c[i] = '0';
 		i++;
 	}
-// 	printf("C [i] is %s\n", c);
+	while (i < cnt && num != 0)
+	{
+		
+		if (isneg < 0)
+		{
+			c[0] = '-';
+			i++;
+		}
+		if (num < 10 && num > -10)
+		{
+// 			if (isneg < 0)
+// 			{
+// 				num = num * -1;
+// 				c[0] = '-';
+// 				i++;
+// 			}
+// 			c[i] = num % 10 + 48;
+			c[i] = num + '0';
+			i++;
+		}
+		else
+		{
+// 			if (isneg < 0)
+// 			{
+// 				num = num * -1;
+// 				c[0] = '-';
+// 				i++;
+// 			}
+			c[i++] = num % 10 + 48;
+			num /= 10;
+		}
+	}
+	if (n > 0)
+		c = ft_strrev(c, n);
+	c[i] = '\0';
 	return (c);
 }
-
-// int	main(void)
-// {
-// 	int		n;
-// 
-// 	n = -44;
-// 	ft_itoa(n);
-// 
-// 	return (0);
-// }
