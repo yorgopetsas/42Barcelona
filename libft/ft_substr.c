@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzisis-p <yzisis-p@student.42barcel>       +#+  +:+       +#+        */
+/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 18:56:23 by yzisis-p          #+#    #+#             */
-/*   Updated: 2022/07/26 18:56:25 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2022/09/12 23:11:33 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -38,15 +38,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (substr);
 	return (substr);
 }
-
-// int	main()
-// {
-// 	char const		*s;
-// 	unsigned int	start;
-// 	size_t			len;
-// 	
-// 	s = "helloworld";
-// 	start = 5;
-// 	len = 4;
-// 	ft_substr(s, start, len);
-// }
