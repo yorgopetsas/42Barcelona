@@ -32,6 +32,20 @@ static int	count_words(const char *str, char c)
 	return (i);
 }
 
+static char			*ft_malloc_error(char *tab)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (tab[i])
+	{
+		free(tab);
+		i++;
+	}
+	free(tab);
+	return (NULL);
+}
+
 static char	*word_dup(const char *str, int start, int finish)
 {
 	char	*word;
@@ -39,6 +53,8 @@ static char	*word_dup(const char *str, int start, int finish)
 
 	i = 0;
 	word = malloc((finish - start + 1) * sizeof(char));
+	if (!word)
+		return (ft_malloc_error(word));
 	while (start < finish)
 		word[i++] = str[start++];
 	word[i] = '\0';
