@@ -12,11 +12,8 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
-# include <locale.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <string.h>
 
 typedef struct s_list
 {
