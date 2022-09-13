@@ -38,15 +38,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (substr);
 	return (substr);
 }
-
-// int	main()
-// {
-// 	char const		*s;
-// 	unsigned int	start;
-// 	size_t			len;
-// 	
-// 	s = "helloworld";
-// 	start = 5;
-// 	len = 4;
-// 	ft_substr(s, start, len);
-// }

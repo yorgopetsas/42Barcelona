@@ -26,18 +26,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[c] = '\0';
 	return (ft_strlen(src));
 }
-
-/* int	main(void)
-{
-	char	*dst;
-	const char	*src = "abcd";
-	size_t	size = 3;
-	
-	// n = strlcpy(dst, src, len);
-    // :w
-	// n = snprintf(dst, len, "%s", src);
-
-	ft_strlcpy(dst, src, size);
-	printf("d %s", dst);
-	
-} */
