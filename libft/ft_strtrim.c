@@ -36,7 +36,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	s = 0;
 	while (s1[s] && yz_findc(s1[s], set))
 		s++;
-	f = strlen(s1);
+	f = ft_strlen(s1);
 	while (f > s && yz_findc(s1[f - 1], set))
 		f--;
 	s2 = (char *)malloc(sizeof(*s1) * (f - s + 1));
