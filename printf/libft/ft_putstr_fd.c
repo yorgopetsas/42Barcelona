@@ -32,18 +32,3 @@ int	ft_putstr_fd(char *s, int fd)
 	}
 	return ((int)i);
 }
-
-// int	ft_putstr_fd(char *s, int fd)
-// {
-// 	int	i;
-// 
-// 	i = 0;
-// 	if (!s)
-// 		return (0);
-// 	while (s[i] != '\0')
-// 	{
-// 		write(fd, &s[i], 1);
-// 		return (1);
-// 		i++;
-// 	}
-// }
