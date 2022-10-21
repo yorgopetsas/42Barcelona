@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 20:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2022/10/20 15:02:32 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2022/10/20 14:36:43 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-#include "get_next_line.h"
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 1
+#endif
 
-char	*get_next_line(int fd)
-{
-	char		*line;
-	static char	*stash;
-	
-	if (fd < 0 || BUFFER_SIZE <= 0)
-		return(0);
-	stash = yz_read_and_save(fd, stash);
-	if (!save)
-		return (NULL);
-	line = yz_get_line(stash);
-	stash = yz_save(stash);
-	return(line);
-}
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <stdio.h>
+
+// char	*get_next_line(int fd);
+// char	*merge_stash_and_buff(char *stash, char *buff);
+// char	*buff_to_stash(char *str);
+// char	*stash_to_line(char *stash, char *buf);
+// int		ft_strlen(char *str);
+// int		search?newline(const chart *buff);
+
+#endif
