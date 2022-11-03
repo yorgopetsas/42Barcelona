@@ -6,10 +6,9 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 20:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2022/11/03 19:04:44 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2022/11/03 21:03:36 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "get_next_line.h"
 
 char	*ft_substr(char *s, int start, int len)
@@ -70,6 +69,36 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (newstr);
 }
 
+int	ft_strchr(const char *str, int ch)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == (char ) ch)
+			return (i);
+		i++;
+	}
+	if (str && str[i] == (char ) ch)
+		return (i);
+	return (-1);
+}
+
+int	ft_strlen(const char *str)
+{
+	int	c;
+
+	c = 0;
+	if (!str)
+		return (0);
+	while (str[c] != '\0')
+	{
+		c++;
+	}
+	return (c);
+}
+
 // ALDO STRJOIN && STRLCPY END
 // YORGO STRJOIN FAILS 
 	// char	*ft_strjoin(char *s1, char *s2)
@@ -122,34 +151,3 @@ char	*ft_strjoin(char *s1, char *s2)
 	// 	}
 	// 	return (-1);
 	// }
-
-int	ft_strchr(const char *str, int ch)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == (char ) ch)
-			return (i);
-		i++;
-	}
-	if (str && str[i] == (char ) ch)
-		return (i);
-	return (-1);
-}
-
-int	ft_strlen(const char *str)
-{
-	int	c;
-
-	c = 0;
-	if (!str)
-		return (0);
-	while (str[c] != '\0')
-	{
-		c++;
-	}
-	return (c);
-}
-
