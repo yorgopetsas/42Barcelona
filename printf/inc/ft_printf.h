@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
+/*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 18:59:27 by yzisis-p          #+#    #+#             */
-/*   Updated: 2022/09/19 22:40:25 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2022/10/20 14:36:57 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FT_PRINTF_H
+
 # define FT_PRINTF_H
 
 # include <stdarg.h>
