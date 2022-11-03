@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 20:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2022/10/20 15:02:32 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2022/11/03 19:52:22 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,10 @@ char	*yz_buffer_to_line(char *buffer)
 		len = ft_strlen(buffer);
 	line = malloc((len + 2) * sizeof(char));
 	if (!line)
+	{
+		// free(line);
 		return (NULL);
+	}
 	line[len + 1] = '\0';
 	while (c < len + 1)
 	{
@@ -102,25 +105,16 @@ char	*get_next_line(int fd)
 	if (!buffer || (buffer && (ft_strchr(buffer, '\n') == -1)))
 		buffer = yz_load_buffer(fd, buffer);
 	if (!buffer)
+	{
+		free(buffer);
 		return (NULL);
+	}
 	line = yz_buffer_to_line(buffer);
+	if (!line)
+	{
+		free(line);
+		return (NULL);
+	}
 	buffer = yz_buffer_set(buffer);
 	return (line);
 }
-
-// int	main(void)
-// {
-// 	int		fd;
-// 	char	*str;
-// 
-// 	str = "0";
-// 	fd = open("text1.txt", O_RDONLY);
-// 	while (str)
-// 	{
-// 		str = get_next_line(fd);
-// 	 	printf("Buffer: <%s> \n", str);
-// 	}
-// 	close(fd);
-// }
-
-
