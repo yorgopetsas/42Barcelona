@@ -1,16 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_filter.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzisis-p <yorgopetsas@student.42.fr>    	+#+  +:+       +#+        */
+/*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 18:59:27 by yzisis-p          #+#    #+#             */
-/*   Updated: 2022/09/15 12:31:41 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2022/11/03 21:29:27 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "../inc/ft_printf.h"
+include "../inc/ft_printf.h"
 
 int	ft_filter(va_list args, const char keyword)
 {
