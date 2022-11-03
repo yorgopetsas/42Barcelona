@@ -74,6 +74,11 @@ char	*yz_load_buffer(int fd, char *buffer)
 	char	tmp[BUFFER_SIZE + 1];
 	
 	bcount = read(fd, tmp, BUFFER_SIZE);
+// 	if (bcount == -1)
+// 	{
+// 		free(buffer);
+// 		return (NULL);
+// 	}
 	while (bcount > 0)
 	{
 		tmp[bcount] = '\0';
