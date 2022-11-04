@@ -9,7 +9,7 @@
 /*   Updated: 2022/11/03 21:29:27 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-include "../inc/ft_printf.h"
+#include "../inc/ft_printf.h"
 
 int	ft_filter(va_list args, const char keyword)
 {
