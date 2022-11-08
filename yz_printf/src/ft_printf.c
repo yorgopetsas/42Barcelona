@@ -44,6 +44,6 @@ int	ft_printf(const char *str, ...)
 // {
 // 	const char	*str;
 // 	
-// 	str = "abc123 %c %d";
-// 	yz_printf(str, 1);
+// 	str = "a";
+// 	ft_printf("%p", str);
 // }

@@ -20,8 +20,6 @@
 //In this case UINT_MAX
 # include <limits.h>
 
-// Librería Libft. POR QUE NO ES ../inc/ ?  Será por esta linea de Makefile 
-//principal: LIBFT_PATH	=	./libft
 # include "libft.h"
 
 int	ft_printf(const char *str, ...);
