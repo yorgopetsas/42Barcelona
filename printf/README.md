@@ -2,6 +2,15 @@ QUESTIONS:
 
 1.
 
+#Get Next Line Explained#  
+##Brief Description##
+###SubBrief Description###  
+**Bold** *Italic*  
+>Backquote  
+`Code`  
+---  
+[title](https://www.example.com)  
+![alt text](image.jpg)  
 *STEPS*
 
 *STEP: 1*  
