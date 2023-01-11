@@ -11,7 +11,7 @@
 	the ability to adapt and find concrete solutions to problems based on current knowledge and tools.
 
 ## Projects:
-* <b style="font-size:25px;">Libft</b> -> Creation of the first own library with basic operations using only write and malloc
+* <b style="font-size:25px;"><a href="https://github.com/yorgopetsas/42Barcelona/tree/master/get_next_lin">Libft</a></b> -> Creation of the first own library with basic operations using only write and malloc
 
 
 * <b style="font-size:25px;">Get Next Line</b> -> In this project we have to handle a file and return the next line handeling with variable BUFFER_SIZE
