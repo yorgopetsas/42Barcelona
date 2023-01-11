@@ -1,4 +1,3 @@
-Hello
 <h1 align="center">
 	Finished Projects from the 42 Coursus
 </h1>
