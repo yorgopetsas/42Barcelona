@@ -23,11 +23,11 @@
 
 Testing the ft_printf with   paulahemsi / ft_printf
 
-<img src="img/test.png" width="800"/>
+IMG
 
 Deep understanding of data types (click full spreadsheet)
 
-[<img src="img/tipos_datos.jpg" width="800"/>](https://docs.google.com/spreadsheets/d/1tJqVVTYtnHSIUbkGQXTx6xxDX2CSWw9Le4LVMcRpRu8/edit?usp=sharing)
+IMG
 
 ## Key points:
 * Learn a highly interesting new concept in C programming: variadic functions.
