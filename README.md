@@ -14,7 +14,7 @@
 * <b style="font-size:25px;">Libft</b> -> Creation of the first own library with basic operations using only write and malloc
 
 
-* <div style="font-size:25px;">Get Next Line</div> -> In this project we have to handle a file and return the next line handeling with variable BUFFER_SIZE
+* <b style="font-size:25px;">Get Next Line</b> -> In this project we have to handle a file and return the next line handeling with variable BUFFER_SIZE
 
 
 * <b style="font-size:25px;">Print_F</b> -> In this project we need to develop our own print_f function only using our code and the <stdarg.h> library for handeling arguments passed from the Terminal
