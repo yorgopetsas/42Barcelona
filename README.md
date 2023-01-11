@@ -11,8 +11,13 @@
 	find concrete solutions to problems based on current knowledge and tools.
 
 ## Projects:
-* <b>libft</b> -> Creation of the first own library with basic operations using only write and malloc
-* <b>Get Next Line</b> -> In this project we have to handle a file and return the next line handeling with variable BUFFER_SIZE
-* <b>Print_F</b> -> In this project we need to develop our own print_f function only using our code and the <stdarg.h> library for handeling arguments passed from the Terminal
-* <b>Born2BeRoot</b> -> In this project we setup a virtual machine, create users, groups, password policies, setup FIREWARE, sudo, SSH access, a cron job, update hostnames and some other small settings. <b>IMPORTANT:</b> No code presented as the VM is 2GB.
-* Memory management anomalies in C.
+* <b style="font-size:25px">Libft</b> -> Creation of the first own library with basic operations using only write and malloc
+
+
+* <b style="font-size:25px">Get Next Line</b> -> In this project we have to handle a file and return the next line handeling with variable BUFFER_SIZE
+
+
+* <b style="font-size:25px">Print_F</b> -> In this project we need to develop our own print_f function only using our code and the <stdarg.h> library for handeling arguments passed from the Terminal
+
+
+* <b style="font-size:25px">Born2BeRoot</b> -> In this project we setup a virtual machine, create users, groups, password policies, setup FIREWARE, sudo, SSH access, a cron job, update hostnames and some other small settings. <b>IMPORTANT:</b> No code presented as the VM is 2GB.
