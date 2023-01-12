@@ -39,8 +39,14 @@ diff:
 		$(info The status of the repository, and the volume of per-file changes:)
 		@git status
 		@git diff --stat
+		
 # include the dependencies
 -include $(DEPFILES)
 
+# add .PHONY so that the non-targetfile - rules work even if a file with the same name exists.
+.PHONY: all clean distribute diff
+
 # This version of Makefile tries to act as universal file which can be used for 
 # the majority of the projects with only updating the first 2-3 variables.
+# This system is takem from Gabriel Palmer and you can find test file on his GitHub:
+# https://github.com/gwu-cs-os/evening_os_hour/blob/master/f19/10.2-makefiles/03_featureful_makefile/Makefile
