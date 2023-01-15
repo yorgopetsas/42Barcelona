@@ -14,13 +14,13 @@
 // Library for:
 // ◦ signal
 //		typedef void (*sighandler_t)(int);
-//      sighandler_t signal(int signum, sighandler_t handler);
-// 		https://man7.org/linux/man-pages/man2/signal.2.html
+//		sighandler_t signal(int signum, sighandler_t handler);
+//		https://man7.org/linux/man-pages/man2/signal.2.html
 //
 // ◦ sigaction
-// 		int sigaction(int signum, const struct sigaction *restrict act,
+//		int sigaction(int signum, const struct sigaction *restrict act,
 //                     struct sigaction *restrict oldact);
-// 		https://man7.org/linux/man-pages/man2/sigaction.2.html
+//		https://man7.org/linux/man-pages/man2/sigaction.2.html
 //
 // ◦ sigemptyset
 //		int sigemptyset(sigset_t *set);
@@ -41,7 +41,7 @@
 //
 // ◦ kill
 //		kill  [-signal|-s signal|-p]  [-q value] [-a] [--timeout milliseconds signal] [--] pid|name...
-// 		https://man7.org/linux/man-pages/man1/kill.1.html
+//		https://man7.org/linux/man-pages/man1/kill.1.html
 //
 // ◦ sleep
 //		unsigned int sleep(unsigned int seconds);
