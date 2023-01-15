@@ -1,7 +1,7 @@
 ## Requierments
-We are allowed to use the following functions:
+- We are allowed to use the following functions:
 
-We are allowed to use the following signals:<br />
+- We are allowed to use the following signals:<br />
 	- SIGUSR1
 	- SIGUSR2
 
