@@ -9,6 +9,8 @@
 /*   Updated: 2023/01/15 22:33:06 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef MINITALK_H
+# define MINITALK_H
 
 #include <signal.h>
 // Library for:
@@ -64,3 +66,8 @@
 //
 // ◦ free
 //		void free(void *ptr)
+
+#include <stdio.h>
+// TEMP: Library for printf
+
+#endif
