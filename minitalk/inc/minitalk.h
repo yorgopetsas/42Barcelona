@@ -19,7 +19,7 @@
 //
 // ◦ sigaction
 //		int sigaction(int signum, const struct sigaction *restrict act,
-//                     struct sigaction *restrict oldact);
+//		struct sigaction *restrict oldact);
 //		https://man7.org/linux/man-pages/man2/sigaction.2.html
 //
 // ◦ sigemptyset
