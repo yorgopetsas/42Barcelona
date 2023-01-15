@@ -6,9 +6,9 @@
 
 This version of Makefile tries to act as universal file which can be used for
 the majority of the projects with only updating the first 2-3 variables.
-The Makefil handles dependencies through the "<b>.MP -MD</b>" flags, checks for relink, has
-call that allows to distribute and additionally can show you the difference between
-your local repository and your GIT. <br />All of the funtions:<br />
+The Makefil handles dependencies through the "<b>.MP -MD</b>" flags, controls the optimization through the 
+<b>OT</b> variable which one can update, checks for relink, has call that allows to distribute and additionally can
+show you the difference between your local repository and your GIT. <br />All of the funtions:<br />
 * all
 * clean
 * fclean (coming soon)
@@ -54,14 +54,22 @@ all: $(BINARY)
 
 $(BINARY): $(OBJECTS)
 		$(CC) -o $@ $^
+		@echo "Binary compiled!"
 
 # only want .c file dependency here, thus $< instead of $^.
-
 %.o:%.c
 		$(CC) $(FLAGS) -c -o $@ $<
 
+# The BINARY variable was excluded in order to include it in the "fclean" call.
 clean:
-		rm -rf $(BINARY) $(OBJECTS) $(DEPFILES)
+		rm -rf $(OBJECTS) $(DEPFILES)
+
+# The call is added by me and needs further tests
+fclean: clean
+		rm -rf $(BINARY)
+
+# The call is added by me and needs further tests
+re:			fclean $(BINARY)
 
 # shell commands are a set of keystrokes away
 distribute: clean
@@ -78,5 +86,6 @@ diff:
 -include $(DEPFILES)
 
 # add .PHONY so that the non-targetfile - rules work even if a file with the same name exists.
-.PHONY: all clean distribute diff
+.PHONY: all clean fclean re distribute diff
+
 ```
