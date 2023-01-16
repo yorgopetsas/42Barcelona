@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/minitalk.h"
+#include "../inc/minitalk.h"
 
 void	ft_handler(int signal)
 {
@@ -39,7 +39,7 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	pid = getpid();
-	printf("Error: wrong format.\n");
+	printf("PID -> %d/n", pid);
 	printf("Waiting for a message...\n");
 	while (argc == 1)
 	{
