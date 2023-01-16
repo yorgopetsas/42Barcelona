@@ -17,6 +17,7 @@ show you the difference between your local repository and your GIT. <br />All of
 <br /><br />
 This system is inspired by Gabriel Palmer and you can find test file on his GitHub:
 <br />LINK: https://github.com/gwu-cs-os/evening_os_hour/blob/master/f19/10.2-makefiles/03_featureful_makefile/Makefile
+<br />LINK: https://www.youtube.com/watch?v=DtGrdB8wQ_8
 
 ### How to use
 
