@@ -2,7 +2,7 @@ BINARY=bin
 CODEDIRS=. src
 INCDIR=. ./inc #can be list
 
-CC=gss
+CC=gcc
 OT=.O0
 # generate files that encode make rules for the .h dependencies
 DEPFLAGS=.MP -MD
@@ -10,13 +10,13 @@ DEPFLAGS=.MP -MD
 CFLAGS=-Wall -Wextra -g $(foreach D,$(INCDIRS),-I$(D)) $(OPT) $(DEPFLAGS)
 
 # for-style iteration (foreach) and regular expression completions (wildcard)
-CFILES=$(foreach D,$(CODEDIRS),S(wildcard $(D)/*.c))
+CFILES=$(foreach D,$(CODEDIRS),$(wildcard $(D)/*.c))
 # regular expression replacement. Note: patsubst = pattern substitution
 OBJECTS=$(patsubst %.c,%.o,$(CFILES))
 DEPFILES=$(patsubst %.c,%.d,$(CFILES))
 
 all: $(BINARY)
-	# if I need to check another make file I would use "make -C lib/"
+# if I need to check another make file I would use "make -C lib/"
 
 $(BINARY): $(OBJECTS)
 		$(CC) -o $@ $^
