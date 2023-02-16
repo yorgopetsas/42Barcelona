@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:36:39 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/16 22:42:56 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/16 23:12:06 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ t_stack *stack_mem(t_stack *stack);
 size_t	add_at_end(t_stack **stack, t_stack *new_item);
 t_stack	*create_cont(int num);
 void	put_index(t_stack **stack);
+
+// CASES
+void	ft_controler(t_stack **stack, int argc);
+void	case_two(t_stack **stack);
 
 // OPERATIONS
 void	ft_sw(t_stack **stack);

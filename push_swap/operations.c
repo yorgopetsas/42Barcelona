@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:02:24 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/16 22:53:46 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/16 23:25:41 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -68,7 +68,7 @@ void	ft_rrab(t_stack **stack, t_stack **stack_b)
 
 void	ft_rab(t_stack **stack)
 {
-	show_stack(stack, stack);
+	// show_stack(stack, stack);
 
 	t_stack	*tmp;
 
@@ -80,7 +80,7 @@ void	ft_rab(t_stack **stack)
 		tmp->next = NULL;
 	}
 	// put_index(stack);
-	show_stack(stack, stack);
+	// show_stack(stack, stack);
 }
 
 
