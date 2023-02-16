@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:36:39 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/16 23:12:06 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/16 23:42:25 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	put_index(t_stack **stack);
 // CASES
 void	ft_controler(t_stack **stack, int argc);
 void	case_two(t_stack **stack);
+void	case_three(t_stack **stack);
 
 // OPERATIONS
 void	ft_sw(t_stack **stack);

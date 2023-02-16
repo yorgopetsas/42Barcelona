@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:04:13 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/16 23:23:52 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/17 00:02:32 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -134,8 +134,9 @@ ssize_t	startup(char **argv, int idx, int argc)
 	put_index(&stack_a);
 	put_index(&stack_b);
 
-	show_stack(&stack_a, &stack_b);
+	// show_stack(&stack_a, &stack_b);
 	
+	// ft_sw(&stack_a);
 	ft_controler(&stack_a, argc);
 
 	// OPERATIONS
