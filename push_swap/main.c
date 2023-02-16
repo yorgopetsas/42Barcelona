@@ -6,11 +6,10 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:04:13 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/07 23:59:39 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/16 17:59:03 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
-
 
 t_stack *stack_mem(t_stack *stack)
 {
@@ -20,16 +19,104 @@ t_stack *stack_mem(t_stack *stack)
 	return (stack);
 }
 
-t_stack	fill_stack(t_stack *stack, int idx, char **argv)
+// t_stack	fill_stack(t_stack *stack, int idx, char **argv)
+// {
+// 	stack->num = (argv[idx][0] - 48);
+// 	stack->index = idx;
+// 	stack->next = NULL;
+// 	return(stack[0]);
+// }
+
+
+// FUNCTION FILLS THE STACK_A WITH THE INPUT
+// size_t	fill_stack(char **input, t_stack **stack_a)
+size_t  fill_stack(t_stack **stack_a, int idx, char **input, int argc)
 {
-	stack->num = (argv[idx][0] - 48);
-	stack->index = idx;
-	stack->next = NULL;
-	return(stack[0]);
+	size_t	x;
+
+	x = 1;
+	if (idx == 1)
+	{
+		*stack_a = create_cont(ft_atoi(input[x]));
+		// printf("Curren Stack index: %lu, and value%d\n", stack_a->index, stack_a->num);
+		x++;
+		idx++;
+		// printf("Next Number %s\n", input[x]);
+	}
+	while (x < (argc - 1))
+	{
+		add_at_end(stack_a, create_cont(ft_atoi(input[x])));
+		// size_t	add_at_end(t_stack **stack, t_stack *new_item);
+		// add_at_end(stack_a, ft_atoi(input[x]));
+		// printf("Curren Stack index: %lu, and value%d\n", stack_a->index, stack_a->num);
+		x++;
+	// 	// printf("Next Number %s\n", input[x]);
+	}
+	// while (input[++x])
+	// {
+	// 	if (!add_at_end(stack_a, create_cont(ft_atoi(input[x]))))
+	// 	{
+	// 		ft_free(stack_a);
+	// 		return (ft_error());
+	// 	}
+	// }
+	return (1);
 }
 
-ssize_t	startup(char **argv, int idx)
+size_t  fill_stack_b(t_stack **stack_a, int idx, char **input, int argc)
 {
+	size_t	x;
+
+	x = 1;
+	if (idx == 1)
+	{
+		*stack_a = create_cont(0);
+		x++;
+		idx++;
+	}
+	while (x < (argc - 1))
+	{
+		add_at_end(stack_a, create_cont(0));
+		x++;
+	}
+	return (1);
+}
+
+
+// FUNCTION CREATES A NEW STACK ITEM WITH THE NUM OF THE PARAMETER
+
+
+t_stack	*create_cont(int num)
+{
+	t_stack	*new_item;
+
+	new_item = malloc(sizeof(t_stack) * 1);
+	if (!new_item)
+		return (0);
+	new_item->num = num;
+	printf("New Item Num %d\n", new_item->num);
+	new_item->next = NULL;
+	return (new_item);
+}
+
+// FUNCTION ADDS AT THE END OF THE STACK
+size_t	add_at_end(t_stack **stack, t_stack *new_item)
+{
+	t_stack	*tmp;
+
+	if (!new_item)
+		return (0);
+	tmp = *stack;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new_item;
+	printf("Next item link: %c\n", new_item->num);
+	return (1);
+}
+
+ssize_t	startup(char **argv, int idx, int argc)
+{
+	printf("Number of input is %d\n", argc - 1);
 	t_stack *stack_a;
 	t_stack *stack_b;
 
@@ -40,24 +127,37 @@ ssize_t	startup(char **argv, int idx)
 	stack_a = stack_mem(stack_a);
 	stack_b = stack_mem(stack_b);
 
-	// FILL STACKS
-	*stack_a = fill_stack(stack_a, idx, argv);
-	*stack_b = fill_stack(stack_a, idx, argv);	
+	fill_stack(&stack_a, idx, argv, argc);
+	fill_stack_b(&stack_b, idx, argv, argc);
 
-	// PRINT STACKS
+	// idx++;
+	// while (argv[idx] != '\0')
+	// {
+	// 	fill_stack(&stack_a, idx, argv, argc);
+	// 	// printf("ARGV is %c\n", argv[idx][0]);
+	// 	idx++;
+	// }
 
-	printf("Stack A Position: %zu Value is %d\t|\tStack B Position: %zu Value is %d\n", 
-		stack_a->index, stack_a->num, stack_b->index, stack_b->num);
+	show_stack(&stack_a, &stack_b);
 
+	// FILL STACK A 
+	// *stack_a = fill_stack(stack_a, idx, argv);
+	// printf("This is Case %d\n", argc);
+	// Case selection
+
+	// if (argc > 1 && argc < 5)
+
+		// printf("This is Case 1\n");
+
+	printf("\nContents of structure are %lu, %d\n", stack_a->index, stack_a->num);
+	// printf("Stack A Position: %zu Value is %d\t|\tStack B Position: %zu Value is %d\n", 
+	// 	stack_a->index, stack_a->num, stack_b->index, stack_b->num);
 	printf("Next element is %p\n", (stack_a->next));
 	// FREE STACKS
 	// free(&stack_a);
 	// free(&stack_b);
 	return (1);
 }
-
-// size_t	check_input(char **input);
-
 
 // FUNTION TO SHOW THE ERROR MSG AND RETURN -1
 size_t	ft_error_free(t_stack **stack_a, t_stack **stack_b)
@@ -75,36 +175,102 @@ size_t	ft_error(void)
 	return (0);
 }
 
+int	check_input(int argc, char **argv)
+{
+	int cnt;
+	int att;
+	int x;
+
+	x = 1;
+	cnt = 0;
+	att = 0;
+	// Check if inputs are between 2 and 8
+	if (argc < 3 || argc > 9)
+		return(0);
+	// Check char can be converted to int and if range
+	while (argv[x] != '\0')
+	{
+		att = ft_atoi(argv[x]);
+		if (att > 999 || att < 0)
+		{
+			printf("ARGV value (%d) of position %d is out of range (0-999)\n", att, x);
+			exit (0);
+		}
+		printf("ARGV value of position %d, in INT is %d\n", x, att);
+		x++;
+	}
+	return(1);
+}
+
+int	ft_atoi(const char *nptr)
+{
+	int	num;
+	int	symb;
+
+	num = 0;
+	symb = 1;
+	while (*nptr == 32 || (*nptr >= 9 && *nptr <= 13))
+		nptr++;
+	if (*nptr == '-')
+	{
+		symb = -1;
+		nptr++;
+	}
+	else if (*nptr == '+')
+		nptr++;
+	while (*nptr >= 48 && *nptr <= 57)
+	{
+		num *= 10;
+		num = num + (*nptr - 48);
+		nptr++;
+	}
+	return (num * symb);
+}
+
+// function to see the stack, just a checker for the programer
+void	show_stack(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack	*tmp;
+	t_stack	*tmp2;
+	tmp = *stack_a;
+	tmp2 = *stack_b;
+	printf("\n------------------------------\n");
+	printf("\nSTACK A\t\t\tSTACK B");
+	while (tmp || tmp2)
+	{
+		if (tmp)
+		{
+			printf("\n %d - %zu", tmp->num, tmp->index);
+			tmp = tmp->next;
+		}
+		else
+			printf("\n -");
+		if (tmp2)
+		{
+			printf("\t\t\t%d - %zu", tmp2->num, tmp2->index);
+			tmp2 = tmp2->next;
+		}
+		else
+			printf("\t\t\t-");
+	}
+	printf("\n\n------------------------------");
+}
+
 int	main(int argc, char **argv)
 {
-	printf("Number of input is %d\n", argc - 1);
 	int idx;
-	idx = 1;
-	while (argv[idx] != '\0')
-	{
-		startup(argv, idx);
-		idx++;
-		// printf("ARGV is %c\n", argv[idx][0]);
-	}
+	int status;
 
-	// BRUNOS WAY STEP 1
-	// if (argc > 1)
-	// {
-	// 	if (!startup(argv))
-	// 	{
-	// 		printf("1\n");
-	// 		return (ft_error());
-	// 	}
-	// 	else
-	// 	{
-	// 		printf("2\n");
-	// 		return (ft_error());
-	// 	}
-	// }
-	// else
-	// {
-	// 	return(0);
-	// }
+	idx = 1;
+	status = 1;
+	status = check_input(argc, argv);
+	if (status == 0)
+	{
+		printf("Number of input is Wrong\n");
+		exit (0);
+	}
+	// Iinitiate stacks a & b
+	startup(argv, idx, argc);
 
 	exit (0);
 	return (0);
