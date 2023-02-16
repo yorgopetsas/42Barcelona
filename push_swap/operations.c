@@ -6,10 +6,10 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:02:24 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/16 19:27:47 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/16 19:29:49 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "push_swap.h"
+include "push_swap.h"
 
 // FUNCTION SWAPS THE TWO FIRST ELEMENTS OF THE STACK
 
