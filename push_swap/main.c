@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:04:13 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/16 19:29:45 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/16 22:57:18 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -87,7 +87,6 @@ void	put_index(t_stack **stack)
 
 // FUNCTION CREATES A NEW STACK ITEM WITH THE NUM OF THE PARAMETER
 
-
 t_stack	*create_cont(int num)
 {
 	t_stack	*new_item;
@@ -96,7 +95,7 @@ t_stack	*create_cont(int num)
 	if (!new_item)
 		return (0);
 	new_item->num = num;
-	printf("New Item Num %d\n", new_item->num);
+	// printf("New Item Num %d\n", new_item->num);
 	new_item->next = NULL;
 	return (new_item);
 }
@@ -112,7 +111,7 @@ size_t	add_at_end(t_stack **stack, t_stack *new_item)
 	while (tmp->next)
 		tmp = tmp->next;
 	tmp->next = new_item;
-	printf("Next item link: %d\n", new_item->num);
+	// printf("Next item link: %d\n", new_item->num);
 	return (1);
 }
 
@@ -120,22 +119,28 @@ ssize_t	startup(char **argv, int idx, int argc)
 {
 	printf("Number of input is %d\n", argc - 1);
 	t_stack *stack_a;
-	// t_stack *stack_b;
+	t_stack *stack_b;
 
 	stack_a = NULL;
-	// stack_b = NULL;
+	stack_b = NULL;
 
 	// RESERVE MEMORY FOR THE STACKS
 	stack_a = stack_mem(stack_a);
-	// stack_b = stack_mem(stack_b);
+	stack_b = stack_mem(stack_b);
 
 	fill_stack(&stack_a, idx, argv, argc);
-	// fill_stack_b(&stack_b, idx, argv, argc);
+	fill_stack_b(&stack_b, idx, argv, argc);
 
 	put_index(&stack_a);
-	// printf("Stack A Position: %zu Value is %d\t\n", 
-	// 	stack_a->index, stack_a->num);
-	ft_rab(&stack_a);
+	put_index(&stack_b);
+
+	show_stack(&stack_a, &stack_b);
+	
+	// OPERATIONS
+	
+	// ft_rab(&stack_a);
+	// ft_rrab(&stack_a, &stack_b);
+	// ft_pab(&stack_b, &stack_a);
 
 	// void	ft_sa(t_stack **stack)
 	// put_index(&stack_b);
@@ -148,7 +153,7 @@ ssize_t	startup(char **argv, int idx, int argc)
 	// 	idx++;
 	// }
 
-	// show_stack(&stack_a, &stack_b);
+	
 
 	// FILL STACK A 
 	// *stack_a = fill_stack(stack_a, idx, argv);
@@ -204,10 +209,10 @@ int	check_input(int argc, char **argv)
 		att = ft_atoi(argv[x]);
 		if (att > 999 || att < 0)
 		{
-			printf("ARGV value (%d) of position %d is out of range (0-999)\n", att, x);
+			// printf("ARGV value (%d) of position %d is out of range (0-999)\n", att, x);
 			exit (0);
 		}
-		printf("ARGV value of position %d, in INT is %d\n", x, att);
+		// printf("ARGV value of position %d, in INT is %d\n", x, att);
 		x++;
 	}
 	return(1);

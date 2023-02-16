@@ -6,16 +6,18 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:02:24 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/16 19:29:49 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/16 22:53:46 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-include "push_swap.h"
+#include "push_swap.h"
 
-// FUNCTION SWAPS THE TWO FIRST ELEMENTS OF THE STACK
+// FUNCTION SWAPS THE TWO FIRST ELEMENTS OF A STACK
 
-// SA (swap a): Swap the first 2 elements at the top of stack a. Do nothing if there is only one or no elements.
+// -- SA(swap a) & SB(swap b) 
+// Swap the first 2 elements at the top of a stack. 
+// Do nothing if there is only one or no elements.
 
-void	ft_sa(t_stack **stack)
+void	ft_sw(t_stack **stack)
 {
 	show_stack(stack, stack);
 	// WHY have to make tmp and why the syntax (*stack)->next
@@ -31,11 +33,15 @@ void	ft_sa(t_stack **stack)
 	}
 }
 
+// RRAB & RRA
+// FUNCTION TO SHIFT DOWN ALL THE ELEMENTS OF THE STACK 
+// (The last element becomes the first one.)
+// ??? rrab, rrb (reverse rotate b): Shift down all elements of stack b by 1.
+// rra (reverse rotate a): Shift down all elements of stack a by 1.
 
-// FUNCTION TO SHIFT DOWN ALL THE ELEMENTS OF THE STACK
-void	ft_rrab(t_stack **stack)
+void	ft_rrab(t_stack **stack, t_stack **stack_b)
 {
-	show_stack(stack, stack);
+	show_stack(stack, stack_b);
 
 	t_stack	*tmp;
 	t_stack	*tmp2;
@@ -53,11 +59,13 @@ void	ft_rrab(t_stack **stack)
 		tmp2->next = *stack;
 		*stack = tmp2;
 	}
-	show_stack(stack, stack);
+	show_stack(stack, stack_b);
 }
 
+// RA & RB
+// FUNCTION TO SHIFT UP ALL THE ELEMENTS OF THE STACK 
+// (The first element becomes the last one.)
 
-// FUNCTION TO SHIFT UP ALL THE ELEMENTS OF THE STACK
 void	ft_rab(t_stack **stack)
 {
 	show_stack(stack, stack);
@@ -76,53 +84,34 @@ void	ft_rab(t_stack **stack)
 }
 
 
-// sb (swap b): Swap the first 2 elements at the top of stack b.
-// Do nothing if there is only one or no elements.
-
-int	sb();
-
-// ss : sa and sb at the same time.
-
-int ss();
-
+// PAB & PBA
 // pa (push a): Take the first element at the top of b and put it at the top of a.
 // Do nothing if b is empty.
-
-int	pa();
-
-
-// pb (push b): Take the first element at the top of a and put it at the top of b.
+// ft_pab & ft_pba: Take the first element at the top of a(origin) and put it at the top of b(destination).
 // Do nothing if a is empty.
 
-int	pb();
+void	ft_pab(t_stack **stack_dest, t_stack **stack_origin)
+{
+	t_stack	*tmp;
 
-
-// ra (rotate a): Shift up all elements of stack a by 1.
-// The first element becomes the last one.
-
-int	ra();
-
-
-// rb (rotate b): Shift up all elements of stack b by 1.
-// The first element becomes the last one.
-
-int	rb();
+	show_stack(stack_origin, stack_dest);
+	if (*stack_origin && *stack_dest)
+	{
+		tmp = *stack_origin;
+		(*stack_origin) = (*stack_origin)->next;
+		tmp->next = *stack_dest;
+		*stack_dest = tmp;
+	}
+	else if (*stack_origin && !(*stack_dest))
+	{
+		*stack_dest = *stack_origin;
+		*stack_origin = (*stack_origin)->next;
+		(*stack_dest) = NULL;
+	}
+	show_stack(stack_origin, stack_dest);
+}
 
 // rr : ra and rb at the same time.
-int	rr();
-
-// rra (reverse rotate a): Shift down all elements of stack a by 1.
-// The last element becomes the first one.
-
-int	rra();
-
-
-// rrb (reverse rotate b): Shift down all elements of stack b by 1.
-// The last element becomes the first one.
-
-int	rrb();
-
-
 // rrr : rra and rrb at the same time.
+// ss : sa and sb at the same time.
 
-int	rrr();
