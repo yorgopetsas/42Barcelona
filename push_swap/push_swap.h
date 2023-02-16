@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:36:39 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/16 17:56:17 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/16 19:26:56 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,15 @@ size_t  fill_stack_b(t_stack **stack_a, int idx, char **input, int argc);
 // t_stack	fill_stack(t_stack *stack_a, int idx, char **argv);
 t_stack *stack_mem(t_stack *stack);
 
+// Stack Functions
 size_t	add_at_end(t_stack **stack, t_stack *new_item);
 t_stack	*create_cont(int num);
+void	put_index(t_stack **stack);
+
+// OPERATIONS
+void	ft_sa(t_stack **stack);
+void	ft_rrab(t_stack **stack);
+void	ft_rab(t_stack **stack);
 
 //
 size_t	ft_error_free(t_stack **stack_a, t_stack **stack_b);

@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:04:13 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/16 17:59:03 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/16 19:25:24 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -19,17 +19,7 @@ t_stack *stack_mem(t_stack *stack)
 	return (stack);
 }
 
-// t_stack	fill_stack(t_stack *stack, int idx, char **argv)
-// {
-// 	stack->num = (argv[idx][0] - 48);
-// 	stack->index = idx;
-// 	stack->next = NULL;
-// 	return(stack[0]);
-// }
-
-
 // FUNCTION FILLS THE STACK_A WITH THE INPUT
-// size_t	fill_stack(char **input, t_stack **stack_a)
 size_t  fill_stack(t_stack **stack_a, int idx, char **input, int argc)
 {
 	size_t	x;
@@ -46,20 +36,12 @@ size_t  fill_stack(t_stack **stack_a, int idx, char **input, int argc)
 	while (x < (argc - 1))
 	{
 		add_at_end(stack_a, create_cont(ft_atoi(input[x])));
+		x++;
 		// size_t	add_at_end(t_stack **stack, t_stack *new_item);
 		// add_at_end(stack_a, ft_atoi(input[x]));
 		// printf("Curren Stack index: %lu, and value%d\n", stack_a->index, stack_a->num);
-		x++;
-	// 	// printf("Next Number %s\n", input[x]);
+		// printf("Next Number %s\n", input[x]);
 	}
-	// while (input[++x])
-	// {
-	// 	if (!add_at_end(stack_a, create_cont(ft_atoi(input[x]))))
-	// 	{
-	// 		ft_free(stack_a);
-	// 		return (ft_error());
-	// 	}
-	// }
 	return (1);
 }
 
@@ -80,6 +62,26 @@ size_t  fill_stack_b(t_stack **stack_a, int idx, char **input, int argc)
 		x++;
 	}
 	return (1);
+}
+
+void	put_index(t_stack **stack)
+{
+	t_stack	*tmp;
+	t_stack	*tmp2;
+
+	tmp = *stack;
+	while (tmp)
+	{
+		tmp2 = *stack;
+		tmp->index = 0;
+		while (tmp2)
+		{
+			if (tmp->num > tmp2->num)
+				tmp->index++;
+			tmp2 = tmp2->next;
+		}
+		tmp = tmp->next;
+	}
 }
 
 
@@ -110,7 +112,7 @@ size_t	add_at_end(t_stack **stack, t_stack *new_item)
 	while (tmp->next)
 		tmp = tmp->next;
 	tmp->next = new_item;
-	printf("Next item link: %c\n", new_item->num);
+	printf("Next item link: %d\n", new_item->num);
 	return (1);
 }
 
@@ -118,17 +120,25 @@ ssize_t	startup(char **argv, int idx, int argc)
 {
 	printf("Number of input is %d\n", argc - 1);
 	t_stack *stack_a;
-	t_stack *stack_b;
+	// t_stack *stack_b;
 
 	stack_a = NULL;
-	stack_b = NULL;
+	// stack_b = NULL;
 
 	// RESERVE MEMORY FOR THE STACKS
 	stack_a = stack_mem(stack_a);
-	stack_b = stack_mem(stack_b);
+	// stack_b = stack_mem(stack_b);
 
 	fill_stack(&stack_a, idx, argv, argc);
-	fill_stack_b(&stack_b, idx, argv, argc);
+	// fill_stack_b(&stack_b, idx, argv, argc);
+
+	put_index(&stack_a);
+	// printf("Stack A Position: %zu Value is %d\t\n", 
+	// 	stack_a->index, stack_a->num);
+	ft_rab(&stack_a);
+
+	// void	ft_sa(t_stack **stack)
+	// put_index(&stack_b);
 
 	// idx++;
 	// while (argv[idx] != '\0')
@@ -138,7 +148,7 @@ ssize_t	startup(char **argv, int idx, int argc)
 	// 	idx++;
 	// }
 
-	show_stack(&stack_a, &stack_b);
+	// show_stack(&stack_a, &stack_b);
 
 	// FILL STACK A 
 	// *stack_a = fill_stack(stack_a, idx, argv);
@@ -149,10 +159,11 @@ ssize_t	startup(char **argv, int idx, int argc)
 
 		// printf("This is Case 1\n");
 
-	printf("\nContents of structure are %lu, %d\n", stack_a->index, stack_a->num);
-	// printf("Stack A Position: %zu Value is %d\t|\tStack B Position: %zu Value is %d\n", 
-	// 	stack_a->index, stack_a->num, stack_b->index, stack_b->num);
-	printf("Next element is %p\n", (stack_a->next));
+	// printf("\nContents of structure are %lu, %d\n", stack_a->index, stack_a->num);
+	// printf("Next element is %p\n", (stack_a->next));
+
+	// show_stack(&stack_a, &stack_a);
+
 	// FREE STACKS
 	// free(&stack_a);
 	// free(&stack_b);
@@ -253,7 +264,7 @@ void	show_stack(t_stack **stack_a, t_stack **stack_b)
 		else
 			printf("\t\t\t-");
 	}
-	printf("\n\n------------------------------");
+	printf("\n\n------------------------------\n");
 }
 
 int	main(int argc, char **argv)
