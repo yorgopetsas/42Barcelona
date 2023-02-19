@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:24:26 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/19 14:26:14 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/19 14:29:46 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"

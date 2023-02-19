@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:02:24 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/17 14:01:32 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/19 16:55:20 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -33,6 +33,7 @@ void	ft_sw(t_stack **stack)
 		// show_stack(stack, stack);
 		// write(1, "sb\n", 3);
 	}
+	show_stack(stack, stack);
 }
 
 // FUNCTION TO SHIFT DOWN ALL THE ELEMENTS OF THE STACK 
@@ -62,7 +63,7 @@ void	ft_rrab(t_stack **stack, t_stack **stack_b)
 		tmp2->next = *stack;
 		*stack = tmp2;
 	}
-	// show_stack(stack, stack_b);
+	show_stack(stack, stack_b);
 }
 
 // FUNCTION TO SHIFT UP ALL THE ELEMENTS OF THE STACK 
@@ -74,7 +75,7 @@ void	ft_rrab(t_stack **stack, t_stack **stack_b)
 
 void	ft_rab(t_stack **stack)
 {
-	// show_stack(stack, stack);
+	show_stack(stack, stack);
 
 	t_stack	*tmp;
 
@@ -86,7 +87,7 @@ void	ft_rab(t_stack **stack)
 		tmp->next = NULL;
 	}
 	// put_index(stack);
-	// show_stack(stack, stack);
+	show_stack(stack, stack);
 }
 
 // FUNCTION THAT TAKES THE FIRST ELEMENT AT THE TOP OF STACK_ORIGIN AND PUTS IT AT THE TOP OF STACK_DEST
@@ -115,7 +116,3 @@ void	ft_pab(t_stack **stack_dest, t_stack **stack_origin)
 	}
 	show_stack(stack_origin, stack_dest);
 }
-
-
-
-
