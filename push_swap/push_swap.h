@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:36:39 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/16 23:42:25 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/19 16:55:21 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,16 @@ void	put_index(t_stack **stack);
 void	ft_controler(t_stack **stack, int argc);
 void	case_two(t_stack **stack);
 void	case_three(t_stack **stack);
+void	case_five(t_stack **stack);
+void	case_hun(t_stack **stack);
+void	case_fhun(t_stack **stack);
+
+// CASE THREE SCENARIOS
+void scenario_1(t_stack **stack);
+void scenario_2(t_stack **stack);
+void scenario_3(t_stack **stack);
+void scenario_4(t_stack **stack);
+void scenario_5(t_stack **stack);
 
 // OPERATIONS
 void	ft_sw(t_stack **stack);
@@ -59,5 +69,6 @@ size_t	ft_error(void);
 //
 int	ft_atoi(const char *nptr);
 // ssize_t	ft_itoa(int n);
-//
+
+// HELPER FUNCTINOS
 void	show_stack(t_stack **stack_a, t_stack **stack_b);
