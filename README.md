@@ -11,6 +11,7 @@
 	the ability to adapt and find concrete solutions to problems based on current knowledge and tools.
 
 ## Projects:
+* <b style="font-size:25px;"><a href="https://github.com/yorgopetsas/42Barcelona/tree/master/push_swap">Push_Swap (IN PROGRESS)</a></b> -> In this project we have to use two stacks to sort a random list of numbers with limited kind of operations allowed using the least number of operations possible. 
 
 * <b style="font-size:25px;"><a href="https://github.com/yorgopetsas/42Barcelona/tree/master/get_next_line">Get Next Line</a></b> -> In this project we have to handle a file and return the next line handeling with variable BUFFER_SIZE
 
