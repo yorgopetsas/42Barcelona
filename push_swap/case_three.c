@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:24:13 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/19 14:25:51 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/19 15:56:38 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -14,32 +14,85 @@
 // I compare top to middle, middle to bottom, and bottom to top
 void	case_three(t_stack **stack)
 {
-	
-	if (!((*stack)->num > (*stack)->next->num))
-	 	if (!((*stack)->next->num > (*stack)->next->next->num))
-	 	{
-	 		if (!((*stack)->next->next->num < (*stack)->num))
-	 		{
-	 			printf("All Good!\n");
-	 			show_stack(stack, stack);
-	 			exit(0);
-	 		}
-	 	}
-	 	printf("No Good2!\n");
-	 	ft_rrab(stack, stack);
-	 	printf("RRAB\n");
-	 	if (((*stack)->num > (*stack)->next->num))
-	 	{
-		 	// case_three(stack);
+	int a;
+	int b;
+	int c;
+
+	a = (*stack)->num;
+	b = (*stack)->next->num;
+	c = (*stack)->next->next->num;
+
+	if (a > b)
+	{
+		//Scenario 1
+		if (b < c && c > a)
+		{
+			printf("Scenario 1\n");
+			//sa
 			ft_sw(stack);
-			printf("SW\n");
+			printf("SA\n");
 			show_stack(stack, stack);
+			exit(0);
 		}
-	ft_rrab(stack, stack);
-	printf("RRAB\n");
-	show_stack(stack, stack);
-	if (!((*stack)->num > (*stack)->next->num))
-		printf("No Good3!\n");
-	printf("Good3!\n");
-	// show_stack(stack, stack);
+
+		//Scenario 2	
+		else if ((*stack)->num > (*stack)->next->num && (*stack)->next->num > (*stack)->next->next->num)
+		{
+			printf("Scenario 2\n");
+			//sa
+			ft_sw(stack);
+			printf("SA\n"); 
+			//rra
+			ft_rrab(stack, stack);
+			printf("RRA\n");
+			show_stack(stack, stack);
+			exit(0);
+		}
+		
+		//Scenario 3
+		else if ((*stack)->num > (*stack)->next->num && (*stack)->next->num < (*stack)->next->next->num)
+		{
+			printf("Scenario 3\n");
+			//ra
+			ft_rab(stack);
+			printf("RA\n");
+			show_stack(stack, stack);
+			exit(0);
+		}
+	}
+
+	else if (a < b)
+	{
+		if ((*stack)->num < (*stack)->next->num && (*stack)->next->num < (*stack)->next->next->num)
+		{
+			printf("All Good!\n");
+			show_stack(stack, stack);
+			exit(0);
+		}
+
+		//Scenario 4
+		else if (b > c && c > a)
+		{
+			printf("Scenario 4\n");
+			//sa
+			ft_sw(stack);
+			printf("SA\n");
+			//ra
+			ft_rab(stack);
+			printf("RA\n");
+			show_stack(stack, stack);
+			exit(0);
+		}
+
+		//Scenario 5
+		else if (b > c && c < a)
+		{
+			printf("Scenario 5\n");
+			//rra
+			ft_rrab(stack, stack);
+			printf("RRA\n");
+			show_stack(stack, stack);
+			exit(0);
+		}
+	}
 }
