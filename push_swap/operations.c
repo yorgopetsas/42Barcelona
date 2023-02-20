@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:02:24 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/20 11:39:31 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/20 15:07:16 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -18,9 +18,9 @@
 // Do nothing if there is only one or no elements.
 // ss : sa and sb at the same time.
 
-void	ft_sw(t_stack **stack)
+void	ft_sw(t_stack **stack, t_stack **stack_b)
 {
-	show_stack(stack, stack);
+	// show_stack(stack, stack);
 	// WHY have to make tmp and why the syntax (*stack)->next
 	t_stack	*tmp;
 
@@ -31,9 +31,9 @@ void	ft_sw(t_stack **stack)
 		tmp->next = *(stack);
 		*stack = tmp;
 		// show_stack(stack, stack);
-		write(1, "sa/b\n", 4);
+		write(1, "sa/b\n", 5);
 	}
-	show_stack(stack, stack);
+	// show_stack(stack, stack_b);
 }
 
 // FUNCTION TO SHIFT DOWN ALL THE ELEMENTS OF THE STACK 
@@ -45,7 +45,7 @@ void	ft_sw(t_stack **stack)
 
 void	ft_rrab(t_stack **stack, t_stack **stack_b)
 {
-	show_stack(stack, stack_b);
+	// show_stack(stack, stack_b);
 
 	t_stack	*tmp;
 	t_stack	*tmp2;
@@ -62,9 +62,9 @@ void	ft_rrab(t_stack **stack, t_stack **stack_b)
 		tmp->next = NULL;
 		tmp2->next = *stack;
 		*stack = tmp2;
-		write(1, "rra/b\n", 5);
+		write(1, "rra/b\n", 6);
 	}
-	show_stack(stack, stack_b);
+	// show_stack(stack, stack_b);
 }
 
 // FUNCTION TO SHIFT UP ALL THE ELEMENTS OF THE STACK 
@@ -74,9 +74,9 @@ void	ft_rrab(t_stack **stack, t_stack **stack_b)
 // The first element becomes the last one.
 // rr : ra and rb at the same time.
 
-void	ft_rab(t_stack **stack)
+void	ft_rab(t_stack **stack, t_stack **stack_b)
 {
-	show_stack(stack, stack);
+	// show_stack(stack, stack);
 
 	t_stack	*tmp;
 
@@ -86,10 +86,10 @@ void	ft_rab(t_stack **stack)
 		*stack = (*stack)->next;
 		add_at_end(stack, tmp);
 		tmp->next = NULL;
-		write(1, "ra/b\n", 4);
+		write(1, "ra/b\n", 5);
 	}
 	// put_index(stack);
-	show_stack(stack, stack);
+	// show_stack(stack, stack_b);
 }
 
 // FUNCTION THAT TAKES THE FIRST ELEMENT AT THE TOP OF STACK_ORIGIN AND PUTS IT AT THE TOP OF STACK_DEST
@@ -101,22 +101,21 @@ void	ft_rab(t_stack **stack)
 void	ft_pab(t_stack **stack_dest, t_stack **stack_origin)
 {
 	t_stack	*tmp;
-
-	show_stack(stack_origin, stack_dest);
+	// show_stack(stack_origin, stack_dest);
 	if (*stack_origin && *stack_dest)
 	{
 		tmp = *stack_origin;
 		(*stack_origin) = (*stack_origin)->next;
 		tmp->next = *stack_dest;
 		*stack_dest = tmp;
-		write(1, "pa/b\n", 4);
+		write(1, "pa/b\n", 5);
 	}
 	else if (*stack_origin && !(*stack_dest))
 	{
 		*stack_dest = *stack_origin;
 		*stack_origin = (*stack_origin)->next;
-		(*stack_dest) = NULL;
-		write(1, "pa/b\n", 4);
+		(*stack_dest)->next = NULL;
+		write(1, "pa/b\n", 5);
 	}
-	show_stack(stack_origin, stack_dest);
+	// show_stack(stack_origin, stack_dest);
 }

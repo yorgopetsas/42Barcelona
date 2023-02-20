@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:34:56 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/20 11:35:15 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/20 15:02:33 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -44,7 +44,7 @@ void	show_stack(t_stack **stack_a, t_stack **stack_b)
 	tmp = *stack_a;
 	tmp2 = *stack_b;
 	printf("\n------------------------------\n");
-	printf("\nSTACK A\t\t\tSTACK B");
+	printf("\nSTACK A\t\t\t\tSTACK B");
 	while (tmp || tmp2)
 	{
 		if (tmp)
@@ -56,11 +56,11 @@ void	show_stack(t_stack **stack_a, t_stack **stack_b)
 			printf("\n -");
 		if (tmp2)
 		{
-			printf("\t\t\t%d - %zu", tmp2->num, tmp2->index);
+			printf("\t\t\t\t%d - %zu", tmp2->num, tmp2->index);
 			tmp2 = tmp2->next;
 		}
 		else
-			printf("\t\t\t-");
+			printf("\t\t\t\t-");
 	}
 	printf("\n\n------------------------------\n");
 }
@@ -79,3 +79,86 @@ void	show_stack(t_stack **stack_a, t_stack **stack_b)
 	// }
 
 
+	// a = (*stack)->num;
+	// b = (*stack)->next->num;
+	// c = (*stack)->next->next->num;
+// LONG VERSION
+// void	case_five(t_stack **stack_a, t_stack **stack_b)
+// {
+// 	ft_pab(stack_b, stack_a);
+// 	// show_stack(stack_a, stack_b);
+// 	ft_pab(stack_b, stack_a);
+// 	// show_stack(stack_a, stack_b);
+// 	case_three(stack_a, stack_b);
+// 	ft_pab(stack_a, stack_b);
+// 	// show_stack(stack_a, stack_b);
+// 	if ((*stack_a)->num > (*stack_a)->next->next->next->num)
+// 	{
+// 		ft_rab(stack_a, stack_b);
+// 		show_stack(stack_a, stack_b);
+// 	}
+// 	if ((*stack_a)->num > (*stack_a)->next->num)
+// 		ft_sw(stack_a, stack_b);
+// 	if ((*stack_a)->next->num > (*stack_a)->next->next->num)
+// 	{
+// 		ft_pab(stack_b, stack_a);
+// 		show_stack(stack_a, stack_b);
+// 		ft_sw(stack_a, stack_b);
+// 		ft_pab(stack_a, stack_b);
+// 		show_stack(stack_b, stack_a);
+// 	}
+// 	ft_pab(stack_a, stack_b);
+// 	show_stack(stack_a, stack_b);
+// 	//
+// 	if ((*stack_a)->num > (*stack_a)->next->next->next->next->num)
+// 	{
+// 		ft_rab(stack_a, stack_b);
+// 		show_stack(stack_a, stack_b);
+// 	}
+// 	else if ((*stack_a)->num > (*stack_a)->next->num)
+// 		ft_sw(stack_a, stack_b);
+// 	if ((*stack_a)->next->num > (*stack_a)->next->next->num)
+// 	{
+// 		ft_pab(stack_b, stack_a);
+// 		show_stack(stack_a, stack_b);
+// 		ft_sw(stack_a, stack_b);
+// 		ft_pab(stack_a, stack_b);
+// 		show_stack(stack_a, stack_b);
+// 	}
+// 	if ((*stack_a)->next->next->num > (*stack_a)->next->next->next->num)
+// 	{
+// 		ft_pab(stack_b, stack_a);
+// 		show_stack(stack_a, stack_b);
+// 		ft_pab(stack_b, stack_a);
+// 		show_stack(stack_a, stack_b);
+// 		ft_sw(stack_a, stack_b);
+// 		ft_pab(stack_a, stack_b);
+// 		show_stack(stack_a, stack_b);
+// 		ft_pab(stack_a, stack_b);
+// 		show_stack(stack_a, stack_b);
+// 	}
+// }
+//
+// void	step_one(t_stack **stack_a, t_stack **stack_b)
+// {
+// 	printf("Step One\n");
+// 	ft_pab(stack_b, stack_a);
+// 	ft_pab(stack_b, stack_a);
+// 	case_three(stack_a, stack_b);
+// 	ft_pab(stack_a, stack_b);
+// }
+
+// void	step_two(t_stack **stack_a, t_stack **stack_b)
+// {
+// 	printf("Step Two\n");
+// 	if ((*stack_a)->num > (*stack_a)->next->next->next->num)
+// 		ft_rab(stack_a, stack_b);
+// 	if ((*stack_a)->num > (*stack_a)->next->num)
+// 		ft_sw(stack_a, stack_b);
+// 	if ((*stack_a)->next->num > (*stack_a)->next->next->num)
+// 	{
+// 		ft_pab(stack_b, stack_a);
+// 		ft_sw(stack_a, stack_b);
+// 		ft_pab(stack_a, stack_b);
+// 	}
+// }
