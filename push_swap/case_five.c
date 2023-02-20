@@ -6,14 +6,13 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:24:18 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/20 17:18:18 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/20 17:29:56 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
 void	preapre_b(t_stack **stack_a, t_stack **stack_b)
 {
-	printf("Prep\n");
 	if ((*stack_a)->next->next->num > (*stack_b)->next->num && 
 		(*stack_b)->num < (*stack_b)->next->num) 
 	{
@@ -100,6 +99,17 @@ void	case_five(t_stack **stack_a, t_stack **stack_b)
 	// Setup Stack B
 	preapre_b(stack_a, stack_b);
 
+	// Put first digit back to Stack A
+	ft_pab(stack_a, stack_b);
+	pa_first(stack_a, stack_b);
+
+	// Put second digit back to Stack A
+	ft_pab(stack_a, stack_b);
+	pa_second(stack_a, stack_b);
+
+	show_stack(stack_a, stack_b);
+}
+
 	// if ((*stack_a)->next->next->num > (*stack_b)->next->num && 
 	// 	(*stack_b)->num < (*stack_b)->next->num) 
 	// {
@@ -115,11 +125,6 @@ void	case_five(t_stack **stack_a, t_stack **stack_b)
 	// 		ft_sw(stack_b, stack_a);
 	// 	}
 	// }
-
-	// Put first digit back to Stack A
-	ft_pab(stack_a, stack_b);
-
-	pa_first(stack_a, stack_b);
 
 	// if ((*stack_a)->num > (*stack_a)->next->next->next->num)
 	// {
@@ -143,10 +148,7 @@ void	case_five(t_stack **stack_a, t_stack **stack_b)
 	// 	}
 	// }
 
-	// Put second digit back to Stack A
-	ft_pab(stack_a, stack_b);
 
-	pa_second(stack_a, stack_b);
 	// if ((*stack_a)->num > (*stack_a)->next->next->next->next->num)
 	// {
 	// 	printf("II.Second Letter back Bigger than Last\n");
@@ -176,5 +178,3 @@ void	case_five(t_stack **stack_a, t_stack **stack_b)
 	// 		}
 	// 	}
 	// }
-	show_stack(stack_a, stack_b);
-}
