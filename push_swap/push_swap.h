@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:36:39 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/20 13:18:55 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/20 17:44:22 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ t_stack *stack_mem(t_stack *stack);
 void	case_controler(t_stack **stack_a, t_stack **stack_b, int argc);
 void	case_two(t_stack **stack, t_stack **stack_b);
 int	case_three(t_stack **stack, t_stack **stack_b);
+void	case_four(t_stack **stack_a, t_stack **stack_b);
 void	case_five(t_stack **stack_a, t_stack **stack_b);
 void	case_hun(t_stack **stack);
 void	case_fhun(t_stack **stack);
