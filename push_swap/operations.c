@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:02:24 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/19 16:55:20 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/20 11:39:31 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -31,7 +31,7 @@ void	ft_sw(t_stack **stack)
 		tmp->next = *(stack);
 		*stack = tmp;
 		// show_stack(stack, stack);
-		// write(1, "sb\n", 3);
+		write(1, "sa/b\n", 4);
 	}
 	show_stack(stack, stack);
 }
@@ -62,6 +62,7 @@ void	ft_rrab(t_stack **stack, t_stack **stack_b)
 		tmp->next = NULL;
 		tmp2->next = *stack;
 		*stack = tmp2;
+		write(1, "rra/b\n", 5);
 	}
 	show_stack(stack, stack_b);
 }
@@ -85,6 +86,7 @@ void	ft_rab(t_stack **stack)
 		*stack = (*stack)->next;
 		add_at_end(stack, tmp);
 		tmp->next = NULL;
+		write(1, "ra/b\n", 4);
 	}
 	// put_index(stack);
 	show_stack(stack, stack);
@@ -107,12 +109,14 @@ void	ft_pab(t_stack **stack_dest, t_stack **stack_origin)
 		(*stack_origin) = (*stack_origin)->next;
 		tmp->next = *stack_dest;
 		*stack_dest = tmp;
+		write(1, "pa/b\n", 4);
 	}
 	else if (*stack_origin && !(*stack_dest))
 	{
 		*stack_dest = *stack_origin;
 		*stack_origin = (*stack_origin)->next;
 		(*stack_dest) = NULL;
+		write(1, "pa/b\n", 4);
 	}
 	show_stack(stack_origin, stack_dest);
 }

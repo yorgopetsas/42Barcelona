@@ -6,12 +6,12 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 22:59:44 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/19 14:53:30 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/19 17:17:23 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void	ft_controler(t_stack **stack, int argc)
+void	case_controler(t_stack **stack, int argc)
 {
 	if (argc <= 4)
 		 case_two(stack);
