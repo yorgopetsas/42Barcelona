@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:36:39 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/20 11:42:19 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/20 13:18:55 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,26 +41,26 @@ size_t  fill_stack_b(t_stack **stack_a, int idx, char **input, int argc);
 t_stack *stack_mem(t_stack *stack);
 
 // CASES
-void	case_controler(t_stack **stack, int argc);
-void	case_two(t_stack **stack);
-void	case_three(t_stack **stack);
-void	case_five(t_stack **stack);
+void	case_controler(t_stack **stack_a, t_stack **stack_b, int argc);
+void	case_two(t_stack **stack, t_stack **stack_b);
+int	case_three(t_stack **stack, t_stack **stack_b);
+void	case_five(t_stack **stack_a, t_stack **stack_b);
 void	case_hun(t_stack **stack);
 void	case_fhun(t_stack **stack);
 
 // CASE THREE SCENARIOS
-void scenario_1(t_stack **stack);
-void scenario_2(t_stack **stack);
-void scenario_3(t_stack **stack);
-void scenario_4(t_stack **stack);
-void scenario_5(t_stack **stack);
+int	scenario_1(t_stack **stack, t_stack **stack_b);
+int scenario_2(t_stack **stack, t_stack **stack_b);
+int scenario_3(t_stack **stack, t_stack **stack_b);
+int scenario_4(t_stack **stack, t_stack **stack_b);
+int scenario_5(t_stack **stack, t_stack **stack_b);
 
 // OPERATIONS
-void	ft_sw(t_stack **stack);
-// void	ft_rrab(t_stack **stack);
+void	ft_sw(t_stack **stack, t_stack **stack_b);
 void	ft_rrab(t_stack **stack, t_stack **stack_b);
-void	ft_rab(t_stack **stack);
+void	ft_rab(t_stack **stack, t_stack **stack_b);
 void	ft_pab(t_stack **stack_b, t_stack **stack_a);
+// void	ft_rrab(t_stack **stack);
 
 // ERROR HANDLING
 size_t	ft_error_free(t_stack **stack_a, t_stack **stack_b);
