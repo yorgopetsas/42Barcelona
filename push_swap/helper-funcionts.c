@@ -6,10 +6,23 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:34:56 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/21 14:29:45 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/21 22:22:16 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
+
+void	ft_free_stack(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
+	stack = NULL;
+}
 
 int	ft_atoi(const char *nptr)
 {
@@ -63,6 +76,8 @@ void	show_stack(t_stack **stack_a, t_stack **stack_b)
 			printf("\t\t\t\t-");
 	}
 	printf("\n\n------------------------------\n");
+	// ft_free_stack(&tmp);
+	// ft_free_stack(&tmp2);
 }
 
 	// printf("2 arguments case\n");

@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:02:24 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/21 14:29:43 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/21 22:29:53 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -34,6 +34,7 @@ void	ft_sw(t_stack **stack, t_stack **stack_b)
 		write(1, "sa/b\n", 5);
 	}
 	// show_stack(stack, stack_b);
+	// ft_free_stack(&tmp);
 }
 
 // FUNCTION TO SHIFT DOWN ALL THE ELEMENTS OF THE STACK 
@@ -65,6 +66,8 @@ void	ft_rrab(t_stack **stack, t_stack **stack_b)
 		write(1, "rra/b\n", 6);
 	}
 	// show_stack(stack, stack_b);
+	// ft_free_stack(&tmp);
+	// ft_free_stack(&tmp2);
 }
 
 // FUNCTION TO SHIFT UP ALL THE ELEMENTS OF THE STACK 
@@ -90,6 +93,7 @@ void	ft_rab(t_stack **stack, t_stack **stack_b)
 	}
 	// put_index(stack);
 	// show_stack(stack, stack_b);
+	// ft_free_stack(&tmp);
 }
 
 // FUNCTION THAT TAKES THE FIRST ELEMENT AT THE TOP OF STACK_ORIGIN AND PUTS IT AT THE TOP OF STACK_DEST
@@ -118,4 +122,5 @@ void	ft_pab(t_stack **stack_dest, t_stack **stack_origin)
 		write(1, "pa/b\n", 5);
 	}
 	// show_stack(stack_origin, stack_dest);
+	// ft_free_stack(&tmp);
 }

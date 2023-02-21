@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:24:18 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/21 14:29:30 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/21 21:43:57 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -92,9 +92,9 @@ void	case_five(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_pab(stack_b, stack_a);
 	ft_pab(stack_b, stack_a);
-	printf("Start Case Three\n");
+	// printf("Start Case Three\n");
 	case_three(stack_a, stack_b);
-	printf("End of Case Three\n");
+	// printf("End of Case Three\n");
 
 	// Setup Stack B
 	preapre_b(stack_a, stack_b);
@@ -107,7 +107,7 @@ void	case_five(t_stack **stack_a, t_stack **stack_b)
 	ft_pab(stack_a, stack_b);
 	pa_second(stack_a, stack_b);
 
-	show_stack(stack_a, stack_b);
+	// show_stack(stack_a, stack_b);
 }
 
 	// if ((*stack_a)->next->next->num > (*stack_b)->next->num && 

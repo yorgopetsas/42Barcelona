@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:36:39 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/21 14:29:44 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/21 22:19:57 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,3 +70,4 @@ int	ft_atoi(const char *nptr);
 
 // HELPER FUNCTINOS
 void	show_stack(t_stack **stack_a, t_stack **stack_b);
+void	ft_free_stack(t_stack **stack);
