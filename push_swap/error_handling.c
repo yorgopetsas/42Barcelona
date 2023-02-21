@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 11:06:29 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/21 11:11:15 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/21 14:29:20 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -37,7 +37,7 @@ int	check_input(int argc, char **argv)
 	cnt = 0;
 	att = 0;
 	// Check if inputs are between 2 and 8
-	if (argc < 3 || argc > 9)
+	if (argc < 3 || argc > 102)
 		return(0);
 	// Check char can be converted to int and if range
 	while (argv[x] != '\0')
