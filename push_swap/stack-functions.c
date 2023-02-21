@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:47:35 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/20 11:42:07 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/21 11:21:05 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -33,7 +33,7 @@ size_t  fill_stack(t_stack **stack_a, int idx, char **input, int argc)
 		idx++;
 		// printf("Next Number %s\n", input[x]);
 	}
-	while (x < (argc - 1))
+	while (x < (argc))
 	{
 		add_at_end(stack_a, create_cont(ft_atoi(input[x])));
 		x++;
