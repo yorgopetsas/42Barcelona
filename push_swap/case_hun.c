@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:24:26 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/21 22:22:43 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/22 01:53:50 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -15,30 +15,90 @@ void	sort_twenty(t_stack **stack_a, t_stack **stack_b, int ul)
 {
 	// ASK IF YOU NEED TO DO MALLOC FOR THE TMP STRUCT
 	t_stack	*tmp;
+	t_stack	*tmp2;
 	int		i;
+	// int		y;
 	int		t;
-
+	
+	tmp2 = stack_mem(tmp2);
 	i = 0;
-	t = 30;
-	while (t < 200)
+	// y = 1;
+	t = 1;
+	// show_stack(stack_a, stack_b);
+	while (t < 150)
 	{
 		tmp = *stack_a;
-		if ((*stack_a)->num <= ul)
+		// printf("(*stack_a)->num is: %d\n", (*stack_a)->num);
+		if ((*stack_a)->num > ul)
 		{
-			tmp = *stack_a;
-			if ((*stack_a)->num <= ul)
-			{
-				ft_pab(stack_b, stack_a);
-				tmp = *stack_a;
-			}
+			ft_rab(stack_a, stack_b);
+			// (*stack_a) = (*stack_a)->next;
+			// printf("Next Number is: %d\n", (*stack_a)->num);
+			// // add_at_end(stack_a, tmp);
+			// tmp->next = NULL;
+			// y++;
 		}
-		*stack_a = (*stack_a)->next;
-		add_at_end(stack_a, tmp);
-		tmp->next = NULL;
-		i++;
+		else if ((*stack_a)->num <= ul)
+		{
+			printf("Number Found: %d\n", (*stack_a)->num);
+			ft_pab(&tmp2, stack_a);
+			// show_stack(&tmp2, stack_b);
+			// while (y > 1)
+			// {
+			// 	ft_pab(stack_b, stack_a);
+			// 	// ft_rab(stack_a, stack_b);
+			// 	y--;
+			// }
+			// y = 1;
+		}
 		t++;
+		printf("t is: %d\n", t);
 	}
-	// ft_free_stack(&tmp);
+	
+
+	// ft_rrab(stack_b, stack_a);
+	// ft_rrab(stack_b, stack_a);
+
+	// ft_pab(stack_a, stack_b);
+	// ft_pab(stack_a, stack_b);
+	ft_rrab(&tmp2, stack_a);
+	ft_pab(stack_b, &tmp2);
+	case_five(&tmp2, stack_a);
+	ft_pab(stack_b, &tmp2);
+	ft_pab(stack_b, &tmp2);
+	ft_pab(stack_b, &tmp2);
+	ft_pab(stack_b, &tmp2);
+	ft_pab(stack_b, &tmp2);
+	show_stack(&tmp2, stack_b);
+	show_stack(stack_a, stack_b);
+	// ft_pab(&tmp2, stack_b);
+	
+
+// Original Twenty
+	// while (t < 100)
+	// {
+	// 	tmp = *stack_a;
+	// 	if ((*stack_a)->num <= ul)
+	// 	{
+	// 		printf("(*stack_a)->num: %d.\n", (*stack_a)->num);
+	// 		tmp = *stack_a;
+	// 		while ((*stack_a)->num <= ul && i > 1)
+	// 		{
+	// 			// ft_pab(stack_b, stack_a);
+	// 			ft_rab(stack_a, stack_b);
+	// 			printf("t is: %d.\n", t);
+	// 			// show_stack(stack_a, stack_b);
+	// 			tmp = *stack_a;
+	// 			i--;
+	// 		}
+	// 	}
+	// 	*stack_a = (*stack_a)->next;
+	// 	// add_at_end(stack_a, tmp);
+	// 	tmp->next = NULL;
+	// 	i++;
+	// 	t++;
+	// }
+// END Original Twenty
 }
 
 void	case_hun_two(t_stack **stack_a, t_stack **stack_b)
@@ -47,7 +107,6 @@ void	case_hun_two(t_stack **stack_a, t_stack **stack_b)
 
 	ul = 0;
 	case_two(stack_a, stack_b);
-
 	show_stack(stack_a, stack_b);
 }
 
@@ -61,17 +120,58 @@ void	case_hun(t_stack **stack_a, t_stack **stack_b)
 	ul = 0;
 	x = 0;
 	printf("100 arguments case\n");	
-	while (x < 4)
-	{
-		ul = ul + 20;
-		sort_twenty(stack_a, stack_b, ul);
-		x++;
-	}
-	ul = ul + 18;
+	
+	ul = ul + 5;
 	sort_twenty(stack_a, stack_b, ul);
+	ul = ul + 5;
+	sort_twenty(stack_a, stack_b, ul);
+	ul = ul + 5;
+	sort_twenty(stack_a, stack_b, ul);
+	ul = ul + 5;
+	sort_twenty(stack_a, stack_b, ul);
+	ul = ul + 5;
+	sort_twenty(stack_a, stack_b, ul);
+	ul = ul + 5;
+	sort_twenty(stack_a, stack_b, ul);
+	ul = ul + 5;
+	sort_twenty(stack_a, stack_b, ul);
+	ul = ul + 5;
+	sort_twenty(stack_a, stack_b, ul);
+	ul = ul + 5;
+	sort_twenty(stack_a, stack_b, ul);
+	ul = ul + 5;
+	sort_twenty(stack_a, stack_b, ul);
+	ul = ul + 5;
+	sort_twenty(stack_a, stack_b, ul);
+	ul = ul + 5;
+	sort_twenty(stack_a, stack_b, ul);
+	ul = ul + 5;
+	sort_twenty(stack_a, stack_b, ul);
+	ul = ul + 5;
+	sort_twenty(stack_a, stack_b, ul);
+	ul = ul + 5;
+	sort_twenty(stack_a, stack_b, ul);
+	ul = ul + 5;
+	sort_twenty(stack_a, stack_b, ul);
+	ul = ul + 5;
+	sort_twenty(stack_a, stack_b, ul);
+	ul = ul + 5;
+	sort_twenty(stack_a, stack_b, ul);
+	ul = ul + 5;
+	sort_twenty(stack_a, stack_b, ul);
+	// ul = ul + 5;
+	// sort_twenty(stack_a, stack_b, ul);
+
+	// while (x < 4)
+	// {
+	// 	ul = ul + 20;
+	// 	sort_twenty(stack_a, stack_b, ul);
+	// 	x++;
+	// }
+	// ul = ul + 18;
+	// sort_twenty(stack_a, stack_b, ul);
 	// show_stack(stack_a, stack_b);
-	case_hun_two(stack_a, stack_b);
-	// ft_free_stack(&tmp2);
+	// case_hun_two(stack_a, stack_b);
 }
 
 
