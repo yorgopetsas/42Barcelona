@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:04:13 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/21 22:17:17 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/22 01:23:52 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -26,7 +26,7 @@ ssize_t	startup(char **argv, int idx, int argc)
 	fill_stack(&stack_a, idx, argv, argc);
 
 	// fill_stack_b(&stack_b, idx, argv, argc);
-
+	
 	// CORRECT PLACE FOR NOW
 	// put_index(&stack_a);
 	// put_index(&stack_b);
@@ -39,8 +39,8 @@ ssize_t	startup(char **argv, int idx, int argc)
 	// Case selection
 
 	// FREE STACKS
-	ft_free_stack(&stack_a);
-	ft_free_stack(&stack_b);
+	// ft_free_stack(&stack_a);
+	// ft_free_stack(&stack_b);
 	return (1);
 }
 

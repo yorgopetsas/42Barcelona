@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:24:26 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/22 01:53:50 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/22 11:24:46 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -52,15 +52,8 @@ void	sort_twenty(t_stack **stack_a, t_stack **stack_b, int ul)
 			// y = 1;
 		}
 		t++;
-		printf("t is: %d\n", t);
+		// printf("t is: %d\n", t);
 	}
-	
-
-	// ft_rrab(stack_b, stack_a);
-	// ft_rrab(stack_b, stack_a);
-
-	// ft_pab(stack_a, stack_b);
-	// ft_pab(stack_a, stack_b);
 	ft_rrab(&tmp2, stack_a);
 	ft_pab(stack_b, &tmp2);
 	case_five(&tmp2, stack_a);
@@ -69,36 +62,24 @@ void	sort_twenty(t_stack **stack_a, t_stack **stack_b, int ul)
 	ft_pab(stack_b, &tmp2);
 	ft_pab(stack_b, &tmp2);
 	ft_pab(stack_b, &tmp2);
-	show_stack(&tmp2, stack_b);
-	show_stack(stack_a, stack_b);
-	// ft_pab(&tmp2, stack_b);
-	
+	// show_stack(&tmp2, stack_b);
+	// show_stack(stack_a, stack_b);
+}
 
-// Original Twenty
-	// while (t < 100)
-	// {
-	// 	tmp = *stack_a;
-	// 	if ((*stack_a)->num <= ul)
-	// 	{
-	// 		printf("(*stack_a)->num: %d.\n", (*stack_a)->num);
-	// 		tmp = *stack_a;
-	// 		while ((*stack_a)->num <= ul && i > 1)
-	// 		{
-	// 			// ft_pab(stack_b, stack_a);
-	// 			ft_rab(stack_a, stack_b);
-	// 			printf("t is: %d.\n", t);
-	// 			// show_stack(stack_a, stack_b);
-	// 			tmp = *stack_a;
-	// 			i--;
-	// 		}
-	// 	}
-	// 	*stack_a = (*stack_a)->next;
-	// 	// add_at_end(stack_a, tmp);
-	// 	tmp->next = NULL;
-	// 	i++;
-	// 	t++;
-	// }
-// END Original Twenty
+void	back_to_a(t_stack **stack_a, t_stack **stack_b)
+{
+	int	i;
+
+	i = 113;
+	case_five(stack_a, stack_b);
+	while (i > 0)
+	{
+		if ((*stack_b)->num != 0)
+			ft_pab(stack_a, stack_b);
+		else
+			ft_rab(stack_b, stack_a);
+		i--;
+	}
 }
 
 void	case_hun_two(t_stack **stack_a, t_stack **stack_b)
@@ -107,7 +88,6 @@ void	case_hun_two(t_stack **stack_a, t_stack **stack_b)
 
 	ul = 0;
 	case_two(stack_a, stack_b);
-	show_stack(stack_a, stack_b);
 }
 
 void	case_hun(t_stack **stack_a, t_stack **stack_b)
@@ -159,18 +139,10 @@ void	case_hun(t_stack **stack_a, t_stack **stack_b)
 	sort_twenty(stack_a, stack_b, ul);
 	ul = ul + 5;
 	sort_twenty(stack_a, stack_b, ul);
-	// ul = ul + 5;
-	// sort_twenty(stack_a, stack_b, ul);
+	
+	back_to_a(stack_a, stack_b);
 
-	// while (x < 4)
-	// {
-	// 	ul = ul + 20;
-	// 	sort_twenty(stack_a, stack_b, ul);
-	// 	x++;
-	// }
-	// ul = ul + 18;
-	// sort_twenty(stack_a, stack_b, ul);
-	// show_stack(stack_a, stack_b);
+	show_stack(stack_a, stack_b);
 	// case_hun_two(stack_a, stack_b);
 }
 
@@ -384,7 +356,6 @@ void	case_hun(t_stack **stack_a, t_stack **stack_b)
 // 	}
 // 	show_stack(stack_a, stack_b);
 // }
-
 	// NEW LOGIC
 	// while (i < 199)
 	// {
@@ -413,3 +384,28 @@ void	case_hun(t_stack **stack_a, t_stack **stack_b)
 	// add_at_end(stack_a, tmp);
 	// tmp->next = NULL;
 	// END NEW LOGIC
+// Original Twenty
+	// while (t < 100)
+	// {
+	// 	tmp = *stack_a;
+	// 	if ((*stack_a)->num <= ul)
+	// 	{
+	// 		printf("(*stack_a)->num: %d.\n", (*stack_a)->num);
+	// 		tmp = *stack_a;
+	// 		while ((*stack_a)->num <= ul && i > 1)
+	// 		{
+	// 			// ft_pab(stack_b, stack_a);
+	// 			ft_rab(stack_a, stack_b);
+	// 			printf("t is: %d.\n", t);
+	// 			// show_stack(stack_a, stack_b);
+	// 			tmp = *stack_a;
+	// 			i--;
+	// 		}
+	// 	}
+	// 	*stack_a = (*stack_a)->next;
+	// 	// add_at_end(stack_a, tmp);
+	// 	tmp->next = NULL;
+	// 	i++;
+	// 	t++;
+	// }
+// END Original Twenty
