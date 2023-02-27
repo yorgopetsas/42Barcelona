@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_handling.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
+/*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 11:06:29 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/22 18:21:15 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/02/27 22:29:12 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
