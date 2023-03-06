@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
+/*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:02:24 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/22 18:27:57 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/06 20:23:59 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void	ft_sw(t_stack **stack, t_stack **stack_b)
+void	ft_sw(t_stack **stack, t_stack **stack_b, int state)
 {
 	t_stack	*tmp;
 
@@ -21,11 +21,14 @@ void	ft_sw(t_stack **stack, t_stack **stack_b)
 		(*stack)->next = tmp->next;
 		tmp->next = *(stack);
 		*stack = tmp;
-		write(1, "sa/b\n", 5);
+		if (state == 1)
+			write(1, "sa\n", 3);
+		else
+			write(1, "sb\n", 3);
 	}
 }
 
-void	ft_rrab(t_stack **stack, t_stack **stack_b)
+void	ft_rrab(t_stack **stack, t_stack **stack_b, int state)
 {
 	t_stack	*tmp;
 	t_stack	*tmp2;
@@ -42,11 +45,14 @@ void	ft_rrab(t_stack **stack, t_stack **stack_b)
 		tmp->next = NULL;
 		tmp2->next = *stack;
 		*stack = tmp2;
-		write(1, "rra/b\n", 6);
+		if (state == 1)
+			write(1, "rra\n", 4);
+		else
+			write(1, "rrb\n", 4);
 	}
 }
 
-void	ft_rab(t_stack **stack, t_stack **stack_b)
+void	ft_rab(t_stack **stack, t_stack **stack_b, int state)
 {
 	t_stack	*tmp;
 
@@ -56,11 +62,14 @@ void	ft_rab(t_stack **stack, t_stack **stack_b)
 		*stack = (*stack)->next;
 		add_at_end(stack, tmp);
 		tmp->next = NULL;
-		write(1, "ra/b\n", 5);
+		if (state == 1)
+			write(1, "ra\n", 3);
+		else
+			write(1, "rb\n", 3);
 	}
 }
 
-void	ft_pab(t_stack **stack_dest, t_stack **stack_origin)
+void	ft_pab(t_stack **stack_dest, t_stack **stack_origin, int state)
 {
 	t_stack	*tmp;
 
@@ -70,13 +79,19 @@ void	ft_pab(t_stack **stack_dest, t_stack **stack_origin)
 		(*stack_origin) = (*stack_origin)->next;
 		tmp->next = *stack_dest;
 		*stack_dest = tmp;
-		write(1, "pa/b\n", 5);
+		if (state == 1)
+			write(1, "pa\n", 3);
+		else
+			write(1, "pb\n", 3);
 	}
 	else if (*stack_origin && !(*stack_dest))
 	{
 		*stack_dest = *stack_origin;
 		*stack_origin = (*stack_origin)->next;
 		(*stack_dest)->next = NULL;
-		write(1, "pa/b\n", 5);
+		if (state == 1)
+			write(1, "pa\n", 3);
+		else
+			write(1, "pb\n", 3);
 	}
 }
