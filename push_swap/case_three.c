@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   case_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
+/*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:24:13 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/22 18:02:30 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/06 17:08:42 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
