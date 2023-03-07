@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:36:39 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/06 17:06:35 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/03/07 18:30:19 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 // TMP
 #include <unistd.h>
 #include <stdlib.h>
-
+#include <string.h>
 typedef struct s_stack
 {
 	int	num;
@@ -72,4 +72,6 @@ int	ft_atoi(const char *nptr);
 void	show_stack(t_stack **stack_a, t_stack **stack_b);
 void	ft_free_stack(t_stack **stack);
 
+// UTILS
+size_t	ft_strlen(char *str);
 #endif
