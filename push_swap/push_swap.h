@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
+/*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:36:39 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/21 22:19:57 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/06 17:06:35 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-#endif
+// int	G;
 
 ssize_t	startup(char **argv, int idx, int argc);
 
@@ -54,10 +54,10 @@ int scenario_4(t_stack **stack, t_stack **stack_b);
 int scenario_5(t_stack **stack, t_stack **stack_b);
 
 // OPERATIONS
-void	ft_sw(t_stack **stack, t_stack **stack_b);
-void	ft_rrab(t_stack **stack, t_stack **stack_b);
-void	ft_rab(t_stack **stack, t_stack **stack_b);
-void	ft_pab(t_stack **stack_b, t_stack **stack_a);
+void	ft_sw(t_stack **stack, t_stack **stack_b, int state);
+void	ft_rrab(t_stack **stack, t_stack **stack_b, int state);
+void	ft_rab(t_stack **stack, t_stack **stack_b, int state);
+void	ft_pab(t_stack **stack_b, t_stack **stack_a, int state);
 
 // ERROR HANDLING
 size_t	ft_error_free(t_stack **stack_a, t_stack **stack_b);
@@ -71,3 +71,5 @@ int	ft_atoi(const char *nptr);
 // HELPER FUNCTINOS
 void	show_stack(t_stack **stack_a, t_stack **stack_b);
 void	ft_free_stack(t_stack **stack);
+
+#endif
