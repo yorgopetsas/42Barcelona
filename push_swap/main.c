@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:04:13 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/07 19:50:43 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/03/07 20:39:10 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -36,30 +36,27 @@ ssize_t	startup(char **argv, int idx, int argc)
 	return (1);
 }
 
+void	ft_error_control(int argc, char **argv)
+{
+	int		status;
+
+	status = 1;
+	ft_check_doubles(argv);
+	ft_check_digits(argv);
+	status = check_input(argc, argv);
+	if (status == 0)
+	{
+		printf("Error\n");
+		exit (0);
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	int		idx;
-	int		status;
 
 	idx = 1;
-	status = 1;
-	// input = ctr_arg(argc, argv);
-	// i = 0;
-	// while (i < 10)
-	// {
-	// 	printf("Input is:%s\n", input[i]);
-	// 	i++;
-	// }
-	// printf("Yeah\n");
-	// ft_check_doubles(argv);
-	// ft_check_digits(argv);
-	// status = check_input(argc, argv);
-	// if (status == 0)
-	// {
-	// 	printf("Error\n");
-	// 	exit (0);
-	// }
+	ft_error_control(argc, argv);
 	startup(argv, idx, argc);
 	exit (0);
-	return (0);
 }
