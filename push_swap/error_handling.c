@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 11:06:29 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/07 15:43:22 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/03/06 20:09:36 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -41,12 +41,8 @@ int	check_input(int argc, char **argv)
 	while (argv[x] != NULL)
 	{
 		att = ft_atoi(argv[x]);
-		if (att > 2147483647 || att < -2147483646)
-		{
-			//  Fuera de Rango INT
-			printf("Error\n");
+		if (att > 999 || att < 0)
 			exit (0);
-		}
 		x++;
 	}
 	return (1);
