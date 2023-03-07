@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:36:39 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/07 19:25:12 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/03/07 19:49:47 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ size_t	ft_error_free(t_stack **stack_a, t_stack **stack_b);
 size_t	ft_error(void);
 int		check_input(int argc, char **argv);
 int		ft_check_doubles(char **argv);
+int	ft_check_digits(char **argv);
 
 // LIBFT
 int		ft_atoi(const char *nptr);

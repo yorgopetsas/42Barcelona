@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:04:13 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/07 19:32:28 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/03/07 19:50:43 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -50,13 +50,15 @@ int	main(int argc, char **argv)
 	// 	printf("Input is:%s\n", input[i]);
 	// 	i++;
 	// }
-	ft_check_doubles(argv);
-	status = check_input(argc, argv);
-	if (status == 0)
-	{
-		printf("Error\n");
-		exit (0);
-	}
+	// printf("Yeah\n");
+	// ft_check_doubles(argv);
+	// ft_check_digits(argv);
+	// status = check_input(argc, argv);
+	// if (status == 0)
+	// {
+	// 	printf("Error\n");
+	// 	exit (0);
+	// }
 	startup(argv, idx, argc);
 	exit (0);
 	return (0);

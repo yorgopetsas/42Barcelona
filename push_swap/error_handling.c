@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 11:06:29 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/07 19:28:18 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/03/07 19:49:49 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -23,6 +23,20 @@ size_t	ft_error(void)
 	printf("3\n");
 	write(2, "Error\n", 6);
 	return (-1);
+}
+
+int	ft_check_digits(char **argv)
+{
+	int		x;
+
+	printf("Yeah %s\n", argv[x]);
+	while (argv[x] != NULL)
+	{
+		printf("Yeah %s\n", argv[x]);
+		// if (argv[x] == "5")
+		x++;
+	}
+	return (0);
 }
 
 int	ft_check_doubles(char **argv)
