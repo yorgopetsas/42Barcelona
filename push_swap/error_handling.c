@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 11:06:29 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/07 19:23:57 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/03/07 19:28:18 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -24,20 +24,6 @@ size_t	ft_error(void)
 	write(2, "Error\n", 6);
 	return (-1);
 }
-
-// int	ft_strncmp(char *s1, char *s2)
-// {
-// 	int	cont;
-
-// 	cont = 0;
-// 	while (s1[cont] != '\0' || s2[cont] != '\0')
-// 	{
-// 		if (s1[cont] != s2[cont])
-// 			return (1);
-// 		cont++;
-// 	}
-// 	return (0);
-// }
 
 int	ft_check_doubles(char **argv)
 {
