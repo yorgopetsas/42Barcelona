@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 20:15:40 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/03/07 16:40:29 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/03/07 23:15:14 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -19,17 +19,18 @@ void	sort_ul(t_stack **stack_a, t_stack **stack_b, int ul)
 	cnt = *stack_a;
 	cnt = stack_mem(cnt);
 	ps = 0;
-	
-	show_stack(stack_a, stack_b);
+	// show_stack(stack_a, stack_b);
+	printf("1st while/if %i", ul);
 	while (ps < ul)
 	{
 		if ((*stack_a)->num > ul)
 		{
 			ft_rab(stack_a, stack_b, 1);
-			// printf("1st while/if");
+			printf("2nd while/if\n");
 		}
-		else if ((*stack_a)->num <= ul)
+		if ((*stack_a)->num <= ul)
 		{
+			printf("3rd if\n");
 			if ((*stack_a)->num < ul / 2)
 				ft_pab(stack_b, stack_a, 2);
 			else
@@ -72,13 +73,13 @@ void	case_hun(t_stack **stack_a, t_stack **stack_b)
 		x++;
 	}
 	// show_stack(stack_a, stack_b);
-	ul = 80;
-	while (x < 5)
-	{
-		back_to_a(stack_a, stack_b, ul);
-		ul = ul - 20;
-		x++;
-	}
+	// ul = 80;
+	// while (x < 5)
+	// {
+	// 	back_to_a(stack_a, stack_b, ul);
+	// 	ul = ul - 20;
+	// 	x++;
+	// }
 	// show_stack(stack_a, stack_b);
 }
 

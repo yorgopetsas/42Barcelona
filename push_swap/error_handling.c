@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 11:06:29 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/07 20:46:56 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/03/07 23:02:10 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -38,7 +38,7 @@ int	ft_check_digits(char **argv)
 		{
 			if (!ft_atoi(&argv[x][t]))
 			{
-				write(2, "Error\n", 6);
+				write(2, "ErrorCD\n", 8);
 				exit(0);
 			}
 			t++;
@@ -63,7 +63,7 @@ void	ft_check_doubles(char **argv)
 		{
 			if (ft_strncmp(argv[cont1], argv[cont2]) == 0)
 			{
-				write(2, "Error\n", 6);
+				write(2, "ErrorCDBL\n", 6);
 				exit(0);
 			}
 			else

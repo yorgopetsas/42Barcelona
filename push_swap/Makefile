@@ -6,7 +6,7 @@
 #    By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/11 17:59:27 by yzisis-p          #+#    #+#              #
-#    Updated: 2023/03/07 22:45:53 by yzisis-p         ###   ########.fr        #
+#    Updated: 2023/03/07 22:58:47 by yzisis-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,13 +27,6 @@ INCLUDE = push_swap.h
 
 OBJS	= $(SRCS:.c=.o)
 
-BONUS	=	ft_lstadd_back_bonus.c	\
-			ft_lstadd_front_bonus.c	\
-
-BONUS_OBJS	= $(BONUS:.c=.o)
-
-BNS = .bonus
-
 CC			= gcc
 RM			= rm -f
 CFLAGS		= -Wall -Wextra -Werror -I.
@@ -50,19 +43,12 @@ $(NAME):	$(OBJS) $(INCLUDE)
 			@echo "Mandatory part compiled!"
 
 clean:
-			$(RM) $(OBJS) $(BONUS_OBJS)
+			$(RM) $(OBJS)
 
 fclean:		clean
 			$(RM) $(NAME)
 
 re:			fclean $(NAME)
-
-bonus:		$(BNS)
-
-$(BNS):		$(OBJS) $(BONUS_OBJS)
-			@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-			@touch $@
-			@echo "Bonus part compiled!"
 
 .PHONY:		all clean fclean re
 
