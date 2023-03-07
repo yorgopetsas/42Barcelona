@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:47:35 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/06 16:46:21 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/03/07 22:38:47 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -21,7 +21,7 @@ t_stack	*stack_mem(t_stack *stack)
 
 size_t	fill_stack(t_stack **stack_a, int idx, char **input, int argc)
 {
-	size_t	x;
+	int	x;
 
 	x = 1;
 	if (idx == 1)

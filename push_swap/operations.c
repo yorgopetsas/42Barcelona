@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:02:24 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/06 20:23:59 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/03/07 22:38:30 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -15,6 +15,7 @@ void	ft_sw(t_stack **stack, t_stack **stack_b, int state)
 {
 	t_stack	*tmp;
 
+	tmp = *stack_b;
 	if ((*stack) && ((*stack)->next))
 	{
 		tmp = (*stack)->next;
@@ -33,6 +34,7 @@ void	ft_rrab(t_stack **stack, t_stack **stack_b, int state)
 	t_stack	*tmp;
 	t_stack	*tmp2;
 
+	tmp = *stack_b;
 	if (*stack && ((*stack)->next))
 	{
 		tmp = *stack;
@@ -56,6 +58,7 @@ void	ft_rab(t_stack **stack, t_stack **stack_b, int state)
 {
 	t_stack	*tmp;
 
+	tmp = *stack_b;
 	if (*stack && ((*stack)->next))
 	{
 		tmp = *stack;
