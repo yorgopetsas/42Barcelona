@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 11:06:29 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/07 18:32:22 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/03/07 19:23:57 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -25,6 +25,44 @@ size_t	ft_error(void)
 	return (-1);
 }
 
+// int	ft_strncmp(char *s1, char *s2)
+// {
+// 	int	cont;
+
+// 	cont = 0;
+// 	while (s1[cont] != '\0' || s2[cont] != '\0')
+// 	{
+// 		if (s1[cont] != s2[cont])
+// 			return (1);
+// 		cont++;
+// 	}
+// 	return (0);
+// }
+
+int	ft_check_doubles(char **argv)
+{
+	int	cont1;
+	int	cont2;
+
+	cont1 = 1;
+	cont2 = 1;
+	while (argv[cont1])
+	{
+		cont2 = cont1 + 1;
+		while (argv[cont2])
+		{
+			if (ft_strncmp(argv[cont1], argv[cont2]) == 0)
+			{
+				write(2, "Error\n", 6);
+				exit(0);
+			}
+			else
+				cont2++;
+		}
+		cont1++;
+	}
+}
+
 int	check_input(int argc, char **argv)
 {
 	int	att;
@@ -38,20 +76,15 @@ int	check_input(int argc, char **argv)
 	while (argv[x] != NULL)
 	{
 		att = ft_atoi(argv[x]);
-		if (strlen(argv[x]) >= 11 && att >= 0 || strlen(argv[x]) >= 12)
-			return 0;
-		else if (strlen(argv[x]) == 10)
+		if (ft_strlen(argv[x]) >= 11 && att >= 0 || ft_strlen(argv[x]) >= 12)
+			return (0);
+		else if (ft_strlen(argv[x]) == 10)
 		{
-			if (strcmp(argv[x], "2147483647") > 0 || 
-				(argv[x][0] == '-' && strcmp(argv[x], "-2147483648") > 0))
-				return 0;
+			if (ft_strncmp(argv[x], "2147483647") > 0 || (argv[x][0] == '-'
+				&& ft_strncmp(argv[x], "-2147483648") > 0))
+				return (0);
 		}
 		x++;
 	}
 	return (1);
 }
-
-
-// Errors include for example: some arguments aren’t integers or there are duplicates.
-// strlen
-// strcmp
