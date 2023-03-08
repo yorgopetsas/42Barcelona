@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
+/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 18:28:17 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/03/07 20:34:34 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/03/08 14:01:33 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -35,4 +35,22 @@ int	ft_strlen(char *str)
 	while (str[cont])
 		cont++;
 	return (cont);
+}
+
+int	struct_lent(t_stack **stack)
+{
+	int			i;
+	// t_stack		**tmp;
+	t_stack		*tmp2;
+
+	i = 1;
+	// tmp = stack;
+	tmp2 = *stack;
+	while ((*stack)->next != NULL)
+	{
+		(*stack) = (*stack)->next;
+		i++;
+	}
+	(*stack) = tmp2;
+	return (i);
 }

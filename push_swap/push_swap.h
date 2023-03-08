@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
+/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:36:39 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/07 22:45:31 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/03/08 13:39:56 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,6 @@ void	ft_free_stack(t_stack **stack);
 // UTILS
 int	ft_strlen(char *str);
 int	ft_strncmp(char *s1, char *s2);
+int	struct_lent(t_stack **stack);
 
 #endif
