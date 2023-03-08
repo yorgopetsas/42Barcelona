@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 20:15:40 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/03/08 18:14:46 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/08 18:37:19 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -24,12 +24,12 @@ void	sort_ul(t_stack **stack_a, t_stack **stack_b, int ul, int chunk_size)
 		if ((*stack_a)->num > ul)
 		{
 			ft_rab(stack_a, stack_b, 1);
-			printf("1st while/if\n");
+			// printf("1st while/if\n");
 		}
 		if ((*stack_a)->num <= ul)
 		{
 			ft_pab(stack_b, stack_a, 2);
-			printf("2nd if\n");
+			// printf("2nd if\n");
 			if ((*stack_b)->num < ul - 10)
 				ft_rab(stack_b, stack_a, 2);
 			ps++;
@@ -77,15 +77,14 @@ void	case_hun(t_stack **stack_a, t_stack **stack_b)
 
 	ul = 0;
 	x = 0;
-	chunk_size = 20;
-	// show_stack(stack_a, stack_b);
-	// stk_len = struct_lent(stack_a);
-	// printf("Final Lenght is: %d\n", tmp);
+	stk_len = struct_lent(stack_a);
+	chunk_size = stk_len / 5;
+	printf("Final Lenght is: %d\n", stk_len);
 	while (x < 5)
 	{
 		ul = ul + 20;
 		sort_ul(stack_a, stack_b, ul, chunk_size);
-		show_stack(stack_a, stack_b);
+		// show_stack(stack_a, stack_b);
 		x++;
 	}
 	x = 0;

@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 18:28:17 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/03/08 18:05:14 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/08 18:18:00 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -58,7 +58,7 @@ int	is_biggiest(t_stack **stack)
 	t_stack		*tmp2;
 
 	tmp2 = (*stack);
-	printf("1st.(*tmp2).num and is %d And (*stack)->next is: %i \n", (*tmp2).num, (*stack)->next->num);
+	// printf("1st.(*tmp2).num and is %d And (*stack)->next is: %i \n", (*tmp2).num, (*stack)->next->num);
 	while ((*stack)->next != NULL)
 	{
 		if ((*tmp2).num > (*stack)->next->num)
@@ -66,15 +66,15 @@ int	is_biggiest(t_stack **stack)
 			(*stack) = (*stack)->next;
 			if (!(*stack)->next)
 			{
-				printf("is_biggiest\n");
+				// printf("is_biggiest\n");
 				(*stack) = tmp2;
 				return (1);
 			}
-			printf("2nd.(*tmp2).num and is %d And (*stack)->next is: %i \n", (*tmp2).num, (*stack)->next->num);
+		// printf("2nd.(*tmp2).num and is %d And (*stack)->next is: %i \n", (*tmp2).num, (*stack)->next->num);
 		}
 		else if ((*tmp2).num < (*stack)->next->num)
 		{
-			printf("(*tmp2).num and is %d \n", (*tmp2).num);
+			// printf("(*tmp2).num and is %d \n", (*tmp2).num);
 			(*stack) = tmp2;
 			return (0);
 		}
@@ -85,5 +85,5 @@ int	is_biggiest(t_stack **stack)
 
 int	is_ordered(t_stack **stack)
 {
-	return(0);
+	return (0);
 }
