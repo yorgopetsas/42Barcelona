@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:36:39 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/08 13:39:56 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/08 15:24:22 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,10 @@ t_stack *stack_mem(t_stack *stack);
 t_stack	*create_cont(int num);
 void	put_index(t_stack **stack);
 
-// CASES
+// CASE CONTROLER
 void	case_controler(t_stack **stack_a, t_stack **stack_b, int argc);
+
+// CASES
 void	case_two(t_stack **stack, t_stack **stack_b);
 void	case_three(t_stack **stack, t_stack **stack_b);
 void	case_four(t_stack **stack_a, t_stack **stack_b);
@@ -61,11 +63,12 @@ void	ft_rab(t_stack **stack, t_stack **stack_b, int state);
 void	ft_pab(t_stack **stack_b, t_stack **stack_a, int state);
 
 // ERROR HANDLING
-size_t	ft_error_free(t_stack **stack_a, t_stack **stack_b);
 size_t	ft_error(void);
+size_t	ft_error_free(t_stack **stack_a, t_stack **stack_b);
 int		check_input(int argc, char **argv);
+int		ft_check_digits(char **argv);
 void	ft_check_doubles(char **argv);
-int	ft_check_digits(char **argv);
+
 
 // LIBFT
 int		ft_atoi(const char *nptr);
@@ -79,5 +82,7 @@ void	ft_free_stack(t_stack **stack);
 int	ft_strlen(char *str);
 int	ft_strncmp(char *s1, char *s2);
 int	struct_lent(t_stack **stack);
+int	is_ordered(t_stack **stack);
+int	is_biggiest(t_stack **stack);
 
 #endif

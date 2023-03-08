@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
+/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:04:13 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/07 20:49:37 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/03/08 14:20:48 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -21,15 +21,14 @@ ssize_t	startup(char **argv, int idx, int argc)
 	stack_b = NULL;
 	// RESERVE MEMORY FOR THE STACKS
 	stack_a = stack_mem(stack_a);
-	stack_b = stack_mem(stack_b);
+	// FILL STACK A 
+	// *stack_a = fill_stack(stack_a, idx, argv);
 	fill_stack(&stack_a, idx, argv, argc);
 	put_index(&stack_a);
 	// CASE SELECTION
 	case_controler(&stack_a, &stack_b, argc);
-	// FILL STACK A 
-	// *stack_a = fill_stack(stack_a, idx, argv);
-	// printf("This is Case %d\n", argc);
-	show_stack(&stack_a, &stack_b);
+
+	// show_stack(&stack_a, &stack_b);
 	// FREE STACKS
 	// ft_free_stack(&stack_a);
 	// ft_free_stack(&stack_b);
@@ -42,7 +41,7 @@ void	ft_error_control(int argc, char **argv)
 
 	status = 1;
 	ft_check_doubles(argv);
-	ft_check_digits(argv);
+	// ft_check_digits(argv);
 	status = check_input(argc, argv);
 	if (status == 0)
 	{
