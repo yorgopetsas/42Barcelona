@@ -6,12 +6,12 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 20:15:40 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/03/08 17:06:57 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/08 18:14:46 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 // TABLA RASA
-void	sort_ul(t_stack **stack_a, t_stack **stack_b, int ul)
+void	sort_ul(t_stack **stack_a, t_stack **stack_b, int ul, int chunk_size)
 {
 	// t_stack	*cnt;
 	int		ps;
@@ -19,18 +19,18 @@ void	sort_ul(t_stack **stack_a, t_stack **stack_b, int ul)
 	// cnt = *stack_a;
 	// cnt = stack_mem(cnt);
 	ps = 0;
-	while (ps < ul)
+	while (ps < chunk_size)
 	{
 		if ((*stack_a)->num > ul)
 		{
 			ft_rab(stack_a, stack_b, 1);
-			// printf("1st while/if\n");
+			printf("1st while/if\n");
 		}
 		if ((*stack_a)->num <= ul)
 		{
 			ft_pab(stack_b, stack_a, 2);
 			printf("2nd if\n");
-			if ((*stack_b)->num < ul / 2)
+			if ((*stack_b)->num < ul - 10)
 				ft_rab(stack_b, stack_a, 2);
 			ps++;
 		}
@@ -42,53 +42,30 @@ void	back_to_a(t_stack **stack_a, t_stack **stack_b, int ul)
 	int		ps;
 
 	ps = 0;
-	
 	while ((*stack_b) != NULL)
 	{
-		
 		if (is_biggiest(stack_b) == 1)
 		{
-			printf("YEAH\n");
+			// printf("YEAH\n");
 			ft_pab(stack_a, stack_b, 1);
-			show_stack(stack_a, stack_b);
-			if ((*stack_a)->next != NULL && (*stack_a)->num > (*stack_a)->next->num)
+			if ((*stack_b)->next == NULL)
 			{
-				printf("A1 > A2\n");
-				// ft_rab(stack_a, stack_b, 1);
+				// printf("END OF STACK_B\n");
+				ft_pab(stack_a, stack_b, 1);
 			}
+			// show_stack(stack_a, stack_b);
+			// if ((*stack_a)->next != NULL && (*stack_a)->num > (*stack_a)->next->num)
+			// {
+			// 	printf("A1 > A2\n");
+			// 	// ft_rab(stack_a, stack_b, 1);
+			// }
 		}
-		if (is_biggiest(stack_b) != 0)
-		{
-			printf("NOO YEAH\n");
-		}
+		// if (is_biggiest(stack_b) != 0)
+		// {
+		// 	printf("NOO YEAH\n");
+		// }
 		ft_rab(stack_b, stack_a, 2);
 	}
-
-	// while (ps < ul)
-	// {
-	// 	if ((*stack_b)->num > ul)
-	// 	{
-	// 		ft_rab(stack_b, stack_a, 2);
-	// 		// printf("1st while/if\n");
-	// 	}
-	// 	if ((*stack_b)->num <= ul)
-	// 	{
-	// 		ft_pab(stack_a, stack_b, 1);
-	// 		printf("2nd if\n");
-	// 		if ((*stack_a)->num < ul / 1)
-	// 			ft_rab(stack_a, stack_b, 1);
-	// 		ps++;
-	// 	}
-	// }
-	// while ((*stack_b)->num > ul)
-	// {
-	// 	ft_pab(stack_a, stack_b, 1);
-	// 	if ((*stack_a)->num > ul + 10)
-	// 	{
-	// 		ft_rrab(stack_a, stack_a, 2);
-	// 	}
-	// 	ps++;
-	// }
 }
 
 void	case_hun(t_stack **stack_a, t_stack **stack_b)
@@ -96,16 +73,18 @@ void	case_hun(t_stack **stack_a, t_stack **stack_b)
 	int		ul;
 	int		x;
 	int		stk_len;
+	int		chunk_size;
 
 	ul = 0;
 	x = 0;
+	chunk_size = 20;
 	// show_stack(stack_a, stack_b);
 	// stk_len = struct_lent(stack_a);
 	// printf("Final Lenght is: %d\n", tmp);
-	while (x < 1)
+	while (x < 5)
 	{
 		ul = ul + 20;
-		sort_ul(stack_a, stack_b, ul);
+		sort_ul(stack_a, stack_b, ul, chunk_size);
 		show_stack(stack_a, stack_b);
 		x++;
 	}
