@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 20:15:40 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/03/06 20:17:54 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/03/07 16:40:29 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -16,9 +16,10 @@ void	sort_ul(t_stack **stack_a, t_stack **stack_b, int ul)
 	t_stack	*cnt;
 	int		ps;
 
+	cnt = *stack_a;
 	cnt = stack_mem(cnt);
 	ps = 0;
-	cnt = *stack_a;
+	
 	show_stack(stack_a, stack_b);
 	while (ps < ul)
 	{

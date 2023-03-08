@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   helper-funcionts.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
+/*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:34:56 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/02/21 22:22:16 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/07 19:49:50 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"

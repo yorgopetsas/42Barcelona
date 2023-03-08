@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:36:39 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/06 17:06:35 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/03/07 22:45:31 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 // TMP
 #include <unistd.h>
 #include <stdlib.h>
+#include <string.h>
 
 typedef struct s_stack
 {
@@ -47,11 +48,11 @@ void	case_hun(t_stack **stack_a, t_stack **stack_b);
 void	case_fhun(t_stack **stack_a, t_stack **stack_b);
 
 // CASE THREE SCENARIOS
-int	scenario_1(t_stack **stack, t_stack **stack_b);
-int scenario_2(t_stack **stack, t_stack **stack_b);
-int scenario_3(t_stack **stack, t_stack **stack_b);
-int scenario_4(t_stack **stack, t_stack **stack_b);
-int scenario_5(t_stack **stack, t_stack **stack_b);
+int		scenario_1(t_stack **stack, t_stack **stack_b);
+int 	scenario_2(t_stack **stack, t_stack **stack_b);
+int 	scenario_3(t_stack **stack, t_stack **stack_b);
+int 	scenario_4(t_stack **stack, t_stack **stack_b);
+int 	scenario_5(t_stack **stack, t_stack **stack_b);
 
 // OPERATIONS
 void	ft_sw(t_stack **stack, t_stack **stack_b, int state);
@@ -62,14 +63,20 @@ void	ft_pab(t_stack **stack_b, t_stack **stack_a, int state);
 // ERROR HANDLING
 size_t	ft_error_free(t_stack **stack_a, t_stack **stack_b);
 size_t	ft_error(void);
-int	check_input(int argc, char **argv);
+int		check_input(int argc, char **argv);
+void	ft_check_doubles(char **argv);
+int	ft_check_digits(char **argv);
 
 // LIBFT
-int	ft_atoi(const char *nptr);
+int		ft_atoi(const char *nptr);
 // ssize_t	ft_itoa(int n);
 
 // HELPER FUNCTINOS
 void	show_stack(t_stack **stack_a, t_stack **stack_b);
 void	ft_free_stack(t_stack **stack);
+
+// UTILS
+int	ft_strlen(char *str);
+int	ft_strncmp(char *s1, char *s2);
 
 #endif
