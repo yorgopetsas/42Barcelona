@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:36:39 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/08 15:24:22 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/09 15:53:40 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_stack
 
 ssize_t	startup(char **argv, int idx, int argc);
 
-// Stack Functions
+// STACK FUNCTIONS
 size_t	add_at_end(t_stack **stack, t_stack *new_item);
 size_t  fill_stack(t_stack **stack_a, int idx, char **input, int argc);
 size_t  fill_stack_b(t_stack **stack_a, int idx, char **input, int argc);
@@ -48,6 +48,7 @@ void	case_four(t_stack **stack_a, t_stack **stack_b);
 void	case_five(t_stack **stack_a, t_stack **stack_b);
 void	case_hun(t_stack **stack_a, t_stack **stack_b);
 void	case_fhun(t_stack **stack_a, t_stack **stack_b);
+void	case_six(t_stack **stack_a, t_stack **stack_b);
 
 // CASE THREE SCENARIOS
 int		scenario_1(t_stack **stack, t_stack **stack_b);
@@ -69,7 +70,6 @@ int		check_input(int argc, char **argv);
 int		ft_check_digits(char **argv);
 void	ft_check_doubles(char **argv);
 
-
 // LIBFT
 int		ft_atoi(const char *nptr);
 // ssize_t	ft_itoa(int n);
@@ -84,5 +84,8 @@ int	ft_strncmp(char *s1, char *s2);
 int	struct_lent(t_stack **stack);
 int	is_ordered(t_stack **stack);
 int	is_biggiest(t_stack **stack);
+
+// UTILS2
+void	yz_check_top(t_stack **stack_a, t_stack **stack_b);
 
 #endif
