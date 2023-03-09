@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   case_fhun.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
+/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:24:31 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/07 16:40:24 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/03/09 20:19:26 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"

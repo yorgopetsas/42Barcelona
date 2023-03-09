@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 18:28:17 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/03/08 18:18:00 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/09 19:02:57 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -40,7 +40,7 @@ int	ft_strlen(char *str)
 int	struct_lent(t_stack **stack)
 {
 	t_stack		*tmp;
-	int	i;
+	int			i;
 
 	i = 1;
 	tmp = *stack;
@@ -55,35 +55,49 @@ int	struct_lent(t_stack **stack)
 
 int	is_biggiest(t_stack **stack)
 {
-	t_stack		*tmp2;
+	t_stack		*tmp;
 
-	tmp2 = (*stack);
-	// printf("1st.(*tmp2).num and is %d And (*stack)->next is: %i \n", (*tmp2).num, (*stack)->next->num);
+	tmp = (*stack);
 	while ((*stack)->next != NULL)
 	{
-		if ((*tmp2).num > (*stack)->next->num)
+		if ((*tmp).num > (*stack)->next->num)
 		{
 			(*stack) = (*stack)->next;
 			if (!(*stack)->next)
 			{
-				// printf("is_biggiest\n");
-				(*stack) = tmp2;
+				(*stack) = tmp;
 				return (1);
 			}
-		// printf("2nd.(*tmp2).num and is %d And (*stack)->next is: %i \n", (*tmp2).num, (*stack)->next->num);
 		}
-		else if ((*tmp2).num < (*stack)->next->num)
+		else if ((*tmp).num < (*stack)->next->num)
 		{
-			// printf("(*tmp2).num and is %d \n", (*tmp2).num);
-			(*stack) = tmp2;
+			(*stack) = tmp;
 			return (0);
 		}
 	}
-	(*stack) = tmp2;
+	(*stack) = tmp;
 	return (0);
 }
 
 int	is_ordered(t_stack **stack)
 {
-	return (0);
+	int			x;
+	int			stk_len;
+	t_stack		*tmp;
+
+	stk_len = struct_lent(stack);
+	tmp = (*stack);
+	while (x < stk_len - 1)
+	{
+		if ((*tmp).num > (*tmp).next->num)
+		{
+			return (0);
+		}
+		else if ((*tmp).num < (*tmp).next->num)
+		{
+			tmp = (*tmp).next;
+			x++;
+		}
+	}
+	return (1);
 }
