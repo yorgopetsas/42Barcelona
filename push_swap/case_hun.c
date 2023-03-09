@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 20:15:40 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/03/09 18:02:12 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/09 18:44:13 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -86,19 +86,6 @@ void	case_hun(t_stack **stack_a, t_stack **stack_b)
 		sort_ul(stack_a, stack_b, ul, chunk_size);
 		x++;
 	}
-	x = 0;
-	ul = 0;
-	while (x < 1)
-	{
-		ul = ul + 20;
-		back_to_a(stack_a, stack_b, ul);
-		x++;
-	}
+	ul = 20;
+	back_to_a(stack_a, stack_b, ul);
 }
-
-// x = is_ordered(stack_a);
-// 	if (x == 1)
-// 		printf("\n\nIs Ordered: Yes %d\n\n", x);
-// 	else
-// 		printf("\n\nIs Ordered: No %d\n\n", x);
-	// ft_free_stack(stack_b);
