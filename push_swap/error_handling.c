@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_handling.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzisis-p <yzisis-p@42barcelona.com>        +#+  +:+       +#+        */
+/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 11:06:29 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/07 20:46:56 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/03/09 19:05:31 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -20,7 +20,6 @@ size_t	ft_error_free(t_stack **stack_a, t_stack **stack_b)
 
 size_t	ft_error(void)
 {
-	printf("3\n");
 	write(2, "Error\n", 6);
 	return (-1);
 }
@@ -81,7 +80,7 @@ int	check_input(int argc, char **argv)
 	x = 1;
 	if (argc == 1)
 		exit (0);
-	if (argc < 3 || argc > 502)
+	if (argc < 3 || argc > 501)
 		return (0);
 	while (argv[x] != NULL)
 	{
