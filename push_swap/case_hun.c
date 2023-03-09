@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 20:15:40 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/03/09 18:44:13 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/09 18:45:56 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -14,17 +14,17 @@
 void	final_chunk(t_stack **stack_a, t_stack **stack_b, int ul)
 {
 	int		x;
-	int		test;
+	int		chk;
 
 	x = struct_lent(stack_a);
-	test = x % 20;
+	chk = x % 20;
 	ul = ul - 20;
-	while (test > 0)
+	while (chk > 0)
 	{
 		ft_pab(stack_b, stack_a, 2);
 		if ((*stack_b)->index < ul - 10)
 			ft_rab(stack_b, stack_a, 2);
-		test--;
+		chk--;
 	}
 }
 
