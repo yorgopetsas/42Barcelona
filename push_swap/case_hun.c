@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 20:15:40 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/03/09 14:56:17 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/09 18:02:12 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -56,7 +56,6 @@ void	back_to_a(t_stack **stack_a, t_stack **stack_b, int ul)
 	ps = 0;
 	while ((*stack_b) != NULL)
 	{
-		// yz_check_top(stack_b, stack_a);
 		if (is_biggiest(stack_b) == 1)
 		{
 			ft_pab(stack_a, stack_b, 1);
@@ -64,10 +63,7 @@ void	back_to_a(t_stack **stack_a, t_stack **stack_b, int ul)
 				ft_pab(stack_a, stack_b, 1);
 			if ((*stack_a)->next != NULL
 				&& (*stack_a)->index > (*stack_a)->next->index)
-			{
-				printf("A1 > A2\n");
 				ft_rab(stack_a, stack_b, 1);
-			}
 		}
 		ft_rab(stack_b, stack_a, 2);
 	}
@@ -78,15 +74,16 @@ void	case_hun(t_stack **stack_a, t_stack **stack_b)
 	int		ul;
 	int		x;
 	int		chunk_size;
+	int		l;
 
 	ul = 0;
 	x = 0;
 	chunk_size = struct_lent(stack_a) / 5;
-	while (x < 5)
+	l = struct_lent(stack_a) / chunk_size;
+	while (x < l)
 	{
 		ul = ul + 20;
 		sort_ul(stack_a, stack_b, ul, chunk_size);
-		show_stack(stack_a, stack_b);
 		x++;
 	}
 	x = 0;
@@ -95,14 +92,13 @@ void	case_hun(t_stack **stack_a, t_stack **stack_b)
 	{
 		ul = ul + 20;
 		back_to_a(stack_a, stack_b, ul);
-		show_stack(stack_a, stack_b);
 		x++;
 	}
-	x = is_ordered(stack_a);
-	if (x == 1)
-		printf("\n\nIs Ordered: Yes %d\n\n", x);
-	else
-		printf("\n\nIs Ordered: No %d\n\n", x);
 }
 
-// END TABLA RASA
+// x = is_ordered(stack_a);
+// 	if (x == 1)
+// 		printf("\n\nIs Ordered: Yes %d\n\n", x);
+// 	else
+// 		printf("\n\nIs Ordered: No %d\n\n", x);
+	// ft_free_stack(stack_b);
