@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 22:59:44 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/09 18:52:17 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/09 19:03:39 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -30,5 +30,5 @@ void	case_controler(t_stack **stack_a, t_stack **stack_b, int argc)
 	else if (argc >= 102 && argc <= 501)
 		case_fhun(stack_a, stack_b);
 	else
-		printf("Out Of Range\n");
+		write(2, "Error\n", 6);
 }
