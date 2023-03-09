@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:36:39 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/09 18:13:25 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/09 20:13:54 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,11 @@ void	ft_pab(t_stack **stack_b, t_stack **stack_a, int state);
 size_t	ft_error(void);
 size_t	ft_error_free(t_stack **stack_a, t_stack **stack_b);
 int		check_input(int argc, char **argv);
-int		ft_check_digits(char **argv);
 void	ft_check_doubles(char **argv);
+void	char_is_digit(char **input, int argc);
+
+// ERROR HANDLING PAUSED
+int		ft_check_digits(char **argv);
 
 // LIBFT
 int		ft_atoi(const char *nptr);

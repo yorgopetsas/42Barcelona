@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 11:06:29 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/09 19:05:31 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/09 20:13:48 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -24,28 +24,30 @@ size_t	ft_error(void)
 	return (-1);
 }
 
-int	ft_check_digits(char **argv)
+void	char_is_digit(char **input, int argc)
 {
-	int		x;
-	int		t;
+	int	x;
+	int	z;
 
 	x = 1;
-	t = 0;
-	while (argv[x])
+	z = 0;
+	while (x < (argc))
 	{
-		while (argv[x][t])
+		if (ft_strlen(input[x]) > 1)
 		{
-			if (!ft_atoi(&argv[x][t]))
+			while (input[x][z] != '\0')
 			{
-				write(2, "Error\n", 6);
-				exit(0);
+				if (input[x][z] < '0' || input[x][z] > '9')
+				{
+					write(2, "Error\n", 6);
+					exit (0);
+				}
+				z++;
 			}
-			t++;
+			z = 0;
 		}
-		t = 0;
 		x++;
 	}
-	return (0);
 }
 
 void	ft_check_doubles(char **argv)
@@ -97,3 +99,26 @@ int	check_input(int argc, char **argv)
 	}
 	return (1);
 }
+
+// int	ft_check_digits(char **argv)
+// {
+// 	int		x;
+// 	int		t;
+// 	x = 1;
+// 	t = 0;
+// 	while (argv[x])
+// 	{
+// 		while (argv[x][t])
+// 		{		
+// 			if (!ft_atoi(&argv[x][t]))
+// 			{
+// 				write(2, "Error\n", 6);
+// 				exit(0);
+// 			}
+// 			t++;
+// 		}
+// 		t = 0;
+// 		x++;
+// 	}
+// 	return (0);
+// }
