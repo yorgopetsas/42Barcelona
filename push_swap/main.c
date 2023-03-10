@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:04:13 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/09 20:13:41 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/10 11:59:23 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -28,7 +28,7 @@ ssize_t	startup(char **argv, int idx, int argc)
 	// CASE SELECTION
 	case_controler(&stack_a, &stack_b, argc);
 
-	show_stack(&stack_a, &stack_b);
+	// show_stack(&stack_a, &stack_b);
 	// FREE STACKS
 	ft_free_stack(&stack_a);
 	ft_free_stack(&stack_b);
