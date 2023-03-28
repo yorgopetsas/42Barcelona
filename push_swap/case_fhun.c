@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   case_fhun.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
+/*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:24:31 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/10 12:53:01 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/28 15:24:08 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	final_chunk_fh(t_stack **stack_a, t_stack **stack_b, int final_chk)
@@ -85,7 +86,7 @@ void	case_fhun(t_stack **stack_a, t_stack **stack_b)
 		sort_ul_fh(stack_a, stack_b, ul, final_chk);
 		x++;
 	}
-	if (final_chunk > 0)
+	if (final_chk > 0)
 		final_chunk_fh(stack_a, stack_b, final_chk);
 	ul = 20;
 	back_to_a_fh(stack_a, stack_b, ul);

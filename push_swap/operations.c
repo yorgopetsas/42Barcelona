@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
+/*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:02:24 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/09 18:54:33 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/28 15:41:56 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_sw(t_stack **stack, t_stack **stack_b, int state)

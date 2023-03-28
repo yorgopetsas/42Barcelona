@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   case-controler.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
+/*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 22:59:44 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/10 12:30:18 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/28 16:02:31 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	case_controler(t_stack **stack_a, t_stack **stack_b, int argc)
@@ -29,7 +30,7 @@ void	case_controler(t_stack **stack_a, t_stack **stack_b, int argc)
 		case_hun(stack_a, stack_b);
 	else if (argc >= 102 && argc <= 501)
 		case_fhun(stack_a, stack_b);
-	else
-		write(2, "Error\n", 6);
+	// else
+	// 	write(2, "Error\n", 6);
 	// show_stack(stack_a, stack_b);
 }
