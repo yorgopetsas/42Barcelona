@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 20:15:40 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/03/09 19:25:32 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/10 12:45:49 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -80,6 +80,7 @@ void	case_hun(t_stack **stack_a, t_stack **stack_b)
 	x = 0;
 	chunk_size = struct_lent(stack_a) / 5;
 	l = struct_lent(stack_a) / chunk_size;
+	printf("Case hun\n");
 	while (x < l)
 	{
 		ul = ul + 20;

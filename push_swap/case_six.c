@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:28:16 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/09 18:01:20 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/10 11:58:33 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -82,6 +82,7 @@ void	case_six(t_stack **stack_a, t_stack **stack_b)
 	x = 0;
 	chunk_size = 5;
 	l = struct_lent(stack_a) / chunk_size ;
+	printf("Case Six\n");
 	while (x < l)
 	{
 		ul = ul + 5;

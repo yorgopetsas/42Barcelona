@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 22:59:44 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/09 19:03:39 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/10 12:30:18 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -21,9 +21,9 @@ void	case_controler(t_stack **stack_a, t_stack **stack_b, int argc)
 		case_four(stack_a, stack_b);
 	else if (argc == 6)
 		case_five(stack_a, stack_b);
-	else if (argc > 6 && argc <= 11)
+	else if (argc > 6 && argc <= 10)
 		case_sd(stack_a, stack_b);
-	else if (argc > 11 && argc <= 50)
+	else if (argc > 10 && argc <= 50)
 		case_six(stack_a, stack_b);
 	else if (argc > 50 && argc <= 101)
 		case_hun(stack_a, stack_b);
@@ -31,4 +31,5 @@ void	case_controler(t_stack **stack_a, t_stack **stack_b, int argc)
 		case_fhun(stack_a, stack_b);
 	else
 		write(2, "Error\n", 6);
+	// show_stack(stack_a, stack_b);
 }
