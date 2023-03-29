@@ -49,13 +49,17 @@ void	sort_ul(t_stack **stack_a, t_stack **stack_b, int ul, int chunk_size)
 		final_chunk(stack_a, stack_b, ul);
 }
 
-void	back_to_a(t_stack **stack_a, t_stack **stack_b, int ul)
+void	back_to_a(t_stack **stack_a, t_stack **stack_b, int ul, int chunk_size)
 {
 	int		ps;
+	int		np;
 
 	ps = 0;
+	// chunk_size 
+	// printf("Case hun back\n");
 	while ((*stack_b) != NULL)
 	{
+		while ((*stack_b)->index > )
 		if (is_biggiest(stack_b) == 1)
 		{
 			ft_pab(stack_a, stack_b, 1);
@@ -80,13 +84,13 @@ void	case_hun(t_stack **stack_a, t_stack **stack_b)
 	x = 0;
 	chunk_size = struct_lent(stack_a) / 5;
 	l = struct_lent(stack_a) / chunk_size;
-	printf("Case hun\n");
-	while (x < l)
+	while (x < 5)
 	{
 		ul = ul + 20;
 		sort_ul(stack_a, stack_b, ul, chunk_size);
+		show_stack(stack_a, stack_b);
 		x++;
 	}
-	ul = 20;
-	back_to_a(stack_a, stack_b, ul);
+	ul = struct_lent(stack_b);
+	back_to_a(stack_a, stack_b, ul, chunk_size);
 }

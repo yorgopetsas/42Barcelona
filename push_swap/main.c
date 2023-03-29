@@ -14,7 +14,6 @@
 
 ssize_t	startup(char **argv, int idx, int argc)
 {
-	// printf("Number of input is %d\n", argc - 1);
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 

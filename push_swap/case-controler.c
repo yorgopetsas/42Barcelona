@@ -32,5 +32,5 @@ void	case_controler(t_stack **stack_a, t_stack **stack_b, int argc)
 		case_fhun(stack_a, stack_b);
 	// else
 	// 	write(2, "Error\n", 6);
-	// show_stack(stack_a, stack_b);
+	show_stack(stack_a, stack_b);
 }
