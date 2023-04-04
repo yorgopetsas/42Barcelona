@@ -6,14 +6,14 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 18:07:20 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/10 11:57:47 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/03/30 17:06:40 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
 void	case_sd(t_stack **stack_a, t_stack **stack_b)
 {	
-	printf("Case SD\n");
+	// printf("Case SD\n");
 	while (struct_lent(stack_a) > 5)
 	{
 		if (is_biggiest(stack_a) == 1)

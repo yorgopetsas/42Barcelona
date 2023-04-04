@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   case_fhun.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:24:31 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/28 15:24:08 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:59:02 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	final_chunk_fh(t_stack **stack_a, t_stack **stack_b, int final_chk)
+void	final_chunk_fh(t_stack **stack_a, t_stack **stack_b, unsigned long final_chk)
 {
 	int		x;
 	int		chk;
@@ -30,7 +30,7 @@ void	final_chunk_fh(t_stack **stack_a, t_stack **stack_b, int final_chk)
 	}
 }
 
-void	sort_ul_fh(t_stack **stack_a, t_stack **stack_b, int ul, int final_chk)
+void	sort_ul_fh(t_stack **stack_a, t_stack **stack_b, unsigned long ul)
 {
 	int		ps;
 
@@ -49,7 +49,7 @@ void	sort_ul_fh(t_stack **stack_a, t_stack **stack_b, int ul, int final_chk)
 	}
 }
 
-void	back_to_a_fh(t_stack **stack_a, t_stack **stack_b, int ul)
+void	back_to_a_fh(t_stack **stack_a, t_stack **stack_b)
 {
 	int		ps;
 
@@ -71,10 +71,10 @@ void	back_to_a_fh(t_stack **stack_a, t_stack **stack_b, int ul)
 
 void	case_fhun(t_stack **stack_a, t_stack **stack_b)
 {
-	int		ul;
+	unsigned long		ul;
 	int		x;
 	int		chunks;
-	int		final_chk;
+	unsigned long		final_chk;
 
 	ul = 0;
 	x = 0;
@@ -83,21 +83,21 @@ void	case_fhun(t_stack **stack_a, t_stack **stack_b)
 	while (x < chunks)
 	{
 		ul = ul + 20;
-		sort_ul_fh(stack_a, stack_b, ul, final_chk);
+		sort_ul_fh(stack_a, stack_b, ul);
 		x++;
 	}
 	if (final_chk > 0)
 		final_chunk_fh(stack_a, stack_b, final_chk);
 	ul = 20;
-	back_to_a_fh(stack_a, stack_b, ul);
+	back_to_a_fh(stack_a, stack_b);
 	show_stack(stack_a, stack_b);
 
 	// TMP TESTS
-	x = is_ordered(stack_a);
-	if (x == 1)
-		printf("\n\nIs Ordered: Yes %d\n\n", x);
-	else
-		printf("\n\nIs Ordered: No %d\n\n", x);
-	ft_free_stack(stack_b);
+	// x = is_ordered(stack_a);
+	// if (x == 1)
+	// 	printf("\n\nIs Ordered: Yes %d\n\n", x);
+	// else
+	// 	printf("\n\nIs Ordered: No %d\n\n", x);
+	// ft_free_stack(stack_b);
 	// END TMP TESTS
 }

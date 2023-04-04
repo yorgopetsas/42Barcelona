@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   case-controler.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 22:59:44 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/28 16:02:31 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/04/04 18:17:58 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,10 @@ void	case_controler(t_stack **stack_a, t_stack **stack_b, int argc)
 		case_five(stack_a, stack_b);
 	else if (argc > 6 && argc <= 10)
 		case_sd(stack_a, stack_b);
-	else if (argc > 10 && argc <= 50)
+	else if (argc > 10 && argc <= 102)
 		case_six(stack_a, stack_b);
-	else if (argc > 50 && argc <= 101)
+	else if (argc > 103 && argc <= 501)
 		case_hun(stack_a, stack_b);
-	else if (argc >= 102 && argc <= 501)
+	else if (argc >= 501 && argc <= 901)
 		case_fhun(stack_a, stack_b);
-	// else
-	// 	write(2, "Error\n", 6);
-	show_stack(stack_a, stack_b);
 }

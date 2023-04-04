@@ -6,17 +6,18 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:28:16 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/10 11:58:33 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/04/04 19:19:34 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void	final_chunk_six(t_stack **stack_a, t_stack **stack_b, int ul)
+void	final_chunk_six(t_stack **stack_a, t_stack **stack_b, unsigned long ul)
 {
 	int		x;
 	int		test;
 
-	x = struct_lent(stack_a);
+	if ((*stack_a) != NULL)
+		x = struct_lent(stack_a);
 	test = x % 5;
 	ul = ul - 5;
 	while (test > 0)
@@ -28,19 +29,19 @@ void	final_chunk_six(t_stack **stack_a, t_stack **stack_b, int ul)
 	}
 }
 
-void	sort_ul_six(t_stack **stack_a, t_stack **stack_b, int ul, int chunk_size)
+void	sort_ul_six(t_stack **stack_a, t_stack **stack_b, unsigned long ul, unsigned long chunk_size)
 {
-	int		ps;
+	unsigned long		ps;
 
 	ps = 0;
 	while (ps < chunk_size)
 	{
 		if ((*stack_a)->index >= ul)
 			ft_rab(stack_a, stack_b, 1);
-		if ((*stack_a)->index < ul)
+		else if ((*stack_a)->index < ul)
 		{
 			ft_pab(stack_b, stack_a, 2);
-			if ((*stack_b)->index < ul / 2)
+			if ((*stack_b)->index < ul - (chunk_size / 2))
 				ft_rab(stack_b, stack_a, 2);
 			ps++;
 		}
@@ -51,57 +52,85 @@ void	sort_ul_six(t_stack **stack_a, t_stack **stack_b, int ul, int chunk_size)
 		final_chunk_six(stack_a, stack_b, ul);
 }
 
-void	back_to_a_six(t_stack **stack_a, t_stack **stack_b, int ul)
+void	back_to_a_six(t_stack **stack_a, t_stack **stack_b, unsigned long chunk_size)
 {
-	int		ps;
+	unsigned long		limit;
+	unsigned long		ps;
+	int					mv;
 
 	ps = 0;
-	while ((*stack_b) != NULL)
+	// printf("b1 \n");
+	if ((*stack_b) != NULL)
+		limit = struct_lent(stack_b) - chunk_size;
+	// printf("b2 \n");
+	while (ps < chunk_size && (*stack_b) != NULL)
 	{
-		if (is_biggiest(stack_b) == 1)
+		if ((*stack_b)->next == NULL)
 		{
 			ft_pab(stack_a, stack_b, 1);
-			if ((*stack_b)->next == NULL)
-				ft_pab(stack_a, stack_b, 1);
-			if ((*stack_a)->next != NULL
-				&& (*stack_a)->index > (*stack_a)->next->index)
-				ft_rab(stack_a, stack_b, 1);
+			ps = chunk_size;
 		}
-		ft_rab(stack_b, stack_a, 2);
+		else if (is_biggiest(stack_b) == 1)
+		{
+			ft_pab(stack_a, stack_b, 1);
+			ps++;
+		}
+		else if ((*stack_b)->next->index < limit && ps < chunk_size)
+		{
+			ft_rrab(stack_b, stack_a, 2);
+			if (is_biggiest(stack_b) == 1)
+			{
+				ft_pab(stack_a, stack_b, 1);
+				ps++;
+			}
+		}
+		else if ((*stack_b)->index >= limit && ps < chunk_size)
+		{
+			ft_rab(stack_b, stack_a, 2);
+			if (is_biggiest(stack_b) == 1)
+			{
+				ft_pab(stack_a, stack_b, 1);
+				ps++;
+			}
+		}
+
+		else if ((*stack_b)->index < limit && ps < chunk_size)
+		{
+			while ((*stack_b)->index < limit && ps < chunk_size)
+				ft_rrab(stack_b, stack_a, 2);
+		}
+		limit = limit - chunk_size;
+		if ((*stack_b) == NULL)
+			ps = chunk_size;
+
+		// show_stack(stack_a, stack_b);
 	}
 }
 
 void	case_six(t_stack **stack_a, t_stack **stack_b)
 {
-	int		ul;
-	int		x;
-	int		chunk_size;
-	int		l;
+	unsigned long		ul;
+	unsigned long		chunk_size;
+	int					x;
+	int					l;
 
-	ul = 5;
+	ul = 0;
 	x = 0;
-	chunk_size = 5;
-	l = struct_lent(stack_a) / chunk_size ;
-	printf("Case Six\n");
+	chunk_size = 10;
+	l = struct_lent(stack_a) / chunk_size;
 	while (x < l)
 	{
-		ul = ul + 5;
+		ul = ul + chunk_size;
 		sort_ul_six(stack_a, stack_b, ul, chunk_size);
 		x++;
 	}
 	x = 0;
 	ul = 0;
-	while (x < 1)
+	while (x <= l)
 	{
-		ul = ul + 5;
-		back_to_a_six(stack_a, stack_b, ul);
+		ul = ul + chunk_size;
+		back_to_a_six(stack_a, stack_b, chunk_size);
 		x++;
 	}
+	// show_stack(stack_a, stack_b);
 }
-
-	// yz_check_top(stack_b, stack_a);
-	// x = is_ordered(stack_a);
-	// if (x == 1)
-	// 	printf("\n\nIs Ordered: Yes %d\n\n", x);
-	// else
-	// 	printf("\n\nIs Ordered: No %d\n\n", x);
