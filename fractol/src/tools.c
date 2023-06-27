@@ -6,30 +6,31 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/06/27 21:09:35 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/06/27 21:59:30 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
 #include <stdio.h>
 
-// int	yz_close_win()
-// {
-// 	printf("d\n");
-
-// 	// mlx_destroy_image(mlx, mlx.img);
-// 	// mlx_destroy_window(mlx, wdw);
-// 	// exit(0);
-// 	return(1);
-// }
+int	yz_close_win()
+{
+	printf("d\n");
+	// mlx_destroy_image(mlx, mlx.img);
+	// mlx_destroy_window(mlx, wdw);
+	exit(0);
+}
 
 void	yz_draw_crl(int radius, t_data img)
 {
-	int x = 0;
-	int y = radius;
-	int decision = 3 - 2 * radius;
-	uint_fast32_t l;
+	int				x;
+	int				y;
+	int				decision;
+	uint_fast32_t	l;
 
+	decision = 3 - 2 * radius;
+	x = 0;
+	y = radius;
 	l = 0x00ff01ff;
 	while (x <= y)
 	{
