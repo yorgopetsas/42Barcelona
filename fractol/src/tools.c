@@ -6,21 +6,23 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/06/27 21:59:30 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/06/28 12:07:28 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
 #include <stdio.h>
 
-int	yz_close_win()
+// My Put Pixel Function
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
-	printf("d\n");
-	// mlx_destroy_image(mlx, mlx.img);
-	// mlx_destroy_window(mlx, wdw);
-	exit(0);
+	char	*dst;
+
+	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	*(unsigned int*)dst = color;
 }
 
+// Draw a Circle
 void	yz_draw_crl(int radius, t_data img)
 {
 	int				x;
@@ -31,17 +33,17 @@ void	yz_draw_crl(int radius, t_data img)
 	decision = 3 - 2 * radius;
 	x = 0;
 	y = radius;
-	l = 0x00ff01ff;
+	l = 0x00ff09ff;
 	while (x <= y)
 	{
 		my_mlx_pixel_put(&img, (x + 200), (y + 200), l);
-		my_mlx_pixel_put(&img, (y + 200), (x + 200), l);
+		// my_mlx_pixel_put(&img, (y + 200), (x + 200), l);
 		my_mlx_pixel_put(&img, (-y + 200), (x + 200), l);
-		my_mlx_pixel_put(&img, (-x + 200), (y + 200), l);
+		// my_mlx_pixel_put(&img, (-x + 200), (y + 200), l);
 		my_mlx_pixel_put(&img, (-x + 200), (-y + 200), l);
-		my_mlx_pixel_put(&img, (-y + 200), (-x + 200), l);
+		// my_mlx_pixel_put(&img, (-y + 200), (-x + 200), l);
 		my_mlx_pixel_put(&img, (y + 200), (-x + 200), l);
-		my_mlx_pixel_put(&img, (x + 200), (-y + 200), l);
+		// my_mlx_pixel_put(&img, (x + 200), (-y + 200), l);
 		if (decision <= 0)
             decision += (4 * x) + 6;
 		else
@@ -53,6 +55,7 @@ void	yz_draw_crl(int radius, t_data img)
 	}
 }
 
+// Draw a Triangle
 void	yz_draw_trg(int lines, t_data img)
 {
 	int				width;
@@ -79,6 +82,7 @@ void	yz_draw_trg(int lines, t_data img)
 	}
 }
 
+// Draw a Square
 void	yz_draw_sqr(int ll, t_data img)
 {
 	int		hh;
@@ -97,3 +101,4 @@ void	yz_draw_sqr(int ll, t_data img)
 		ll -= 1;
 	}
 }
+
