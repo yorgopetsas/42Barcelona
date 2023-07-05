@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/05 12:53:41 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/07/05 15:38:26 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,24 @@ typedef struct	s_mlx {
 	double	y1;
 	int		color;
 }				t_mlx;
+
+typedef struct s_fractol {
+	int			isinside;
+	int			color;
+	double		minre;
+	double		maxre;
+	double		minim;
+	double		maxim;
+	double		re_factor;
+	double		im_factor;
+	double		c_re;
+	double 		c_im;
+	double		Z_re;
+	double 		Z_re2;
+	double 		Z_im;
+	double 		Z_im2;
+	unsigned	maxiterations;
+}				t_fractol;
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 void	yz_print_mandelbrat(t_data img);
