@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:18:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/05 17:18:01 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/07/05 18:14:41 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ void	yz_mandel_calc(t_fractol *fr_m, t_mlx *mx)
 			}
 			if (fr_m->isinside)
 				my_mlx_pixel_put(mx, x, y, 0x00000000);
-			// else
-			// 	my_mlx_pixel_put(mx, x, y, 0x00547BE8);
+			else
+				my_mlx_pixel_put(mx, x, y, 0x00547BE8);
 		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/05 18:00:17 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/07/05 18:15:09 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	main(int argc, char **argv)
 	yz_mx_init(&mx);
 
 	yz_print_bckgrnd(&mx);
-	// yz_print_mandelbrat(&mx);
+	yz_print_mandelbrat(&mx);
 
 	mlx_put_image_to_window(mx.mlx, mx.win, mx.img, 0, 0);
 
@@ -80,6 +80,6 @@ int	main(int argc, char **argv)
 	mlx_mouse_hook(mx.win, yz_mouse_hook, &mx);
 
 	yz_print_menu(&mx);
-	
+
 	mlx_loop(mx.mlx);
 }
