@@ -6,15 +6,14 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/05 12:41:15 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/07/05 17:06:11 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
-#include <stdio.h>
 
 // My Put Pixel Function
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+void	my_mlx_pixel_put(t_mlx *data, int x, int y, int color)
 {
 	char	*dst;
 
@@ -31,7 +30,7 @@ void	yz_print_menu(t_mlx *mx)
 	color = 256;
 	x = 100;
 	y = 100;
-	mlx_string_put(mx->mlx, mx->win, x, y, 0x00800020, "TEST");
+	mlx_string_put(mx->mlx, mx->win, x, y, 0x00794CF5, "TEST");
 }
 
 int	yz_key_hook(int keycode, t_mlx *mx)

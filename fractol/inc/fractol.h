@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/05 15:38:26 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/07/05 17:54:48 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef struct	s_mlx {
 	double	x1;
 	double	y1;
 	int		color;
+	char	set;
 }				t_mlx;
 
 typedef struct s_fractol {
@@ -70,8 +71,8 @@ typedef struct s_fractol {
 	unsigned	maxiterations;
 }				t_fractol;
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
-void	yz_print_mandelbrat(t_data img);
+void	my_mlx_pixel_put(t_mlx *data, int x, int y, int color);
+void	yz_print_mandelbrat(t_mlx *mx);
 int		yz_mouse_hook(int keycode, t_mlx *mx);
 int		yz_key_hook(int keycode, t_mlx *mx);
 // MENU
