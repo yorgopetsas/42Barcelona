@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/06/28 12:07:28 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/07/05 12:41:15 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,83 +22,44 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
-// Draw a Circle
-void	yz_draw_crl(int radius, t_data img)
+void	yz_print_menu(t_mlx *mx)
 {
-	int				x;
-	int				y;
-	int				decision;
-	uint_fast32_t	l;
+	int	color;
+	int	y;
+	int	x;
 
-	decision = 3 - 2 * radius;
-	x = 0;
-	y = radius;
-	l = 0x00ff09ff;
-	while (x <= y)
-	{
-		my_mlx_pixel_put(&img, (x + 200), (y + 200), l);
-		// my_mlx_pixel_put(&img, (y + 200), (x + 200), l);
-		my_mlx_pixel_put(&img, (-y + 200), (x + 200), l);
-		// my_mlx_pixel_put(&img, (-x + 200), (y + 200), l);
-		my_mlx_pixel_put(&img, (-x + 200), (-y + 200), l);
-		// my_mlx_pixel_put(&img, (-y + 200), (-x + 200), l);
-		my_mlx_pixel_put(&img, (y + 200), (-x + 200), l);
-		// my_mlx_pixel_put(&img, (x + 200), (-y + 200), l);
-		if (decision <= 0)
-            decision += (4 * x) + 6;
-		else
-		{
-			decision += (4 * (x - y)) + 10;
-            y--;
-		}
-		x++;
-	}
+	color = 256;
+	x = 100;
+	y = 100;
+	mlx_string_put(mx->mlx, mx->win, x, y, 0x00800020, "TEST");
 }
 
-// Draw a Triangle
-void	yz_draw_trg(int lines, t_data img)
+int	yz_key_hook(int keycode, t_mlx *mx)
 {
-	int				width;
-	int				c;
-	int				c_tmp;
-	int				base;
-	uint_fast32_t	l;
+	t_mlx	*y;
 
-	l = 0x00ff01ff;
-	base = 220;
-	c = 0;
-	width = 0;
-
-	while (c < lines)
+	y = mx;
+	printf("%d\n", keycode);
+	if (keycode == 53)
 	{
-		c_tmp = c;
-		while (width > 0)
-		{
-			my_mlx_pixel_put(&img, ((base - (c / 2)) + width), (9 + c_tmp), l);
-			width -= 1;
-		}
-		width = c_tmp;
-		c += 1;
+		printf("OOOPS, somebody pressed 'ESC'.\nThe Window is Closing.\n");
+		// mlx_destroy_image(mx->mlx, mx->win);
+		// mlx_destroy_window(mx->mlx, mx->win);
+		exit (0);
 	}
+	return (0);
 }
 
-// Draw a Square
-void	yz_draw_sqr(int ll, t_data img)
+int	yz_mouse_hook(int keycode, t_mlx *mx)
 {
-	int		hh;
-	int		tmp;
+	t_mlx	*y;
 
-	tmp = ll;
-	hh = tmp;
-	while (ll > 0)
+	y = mx;
+	printf("%d\n", keycode);
+	if (keycode == 53)
 	{
-		while (hh > 0)
-		{
-			my_mlx_pixel_put(&img, (540 + hh), (390 + ll), 0x00ff01ff);
-			hh -= 1;
-		}
-		hh = tmp;
-		ll -= 1;
+		printf("OOOPS, somebody pressed 'ESC'.\nThe Window is Closing.\n");
+		exit (0);
 	}
+	return (0);
 }
-

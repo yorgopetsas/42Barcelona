@@ -6,7 +6,7 @@
 #    By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/27 10:18:58 by yzisis-p          #+#    #+#              #
-#    Updated: 2023/06/27 21:30:43 by yorgopetsas      ###   ########.fr        #
+#    Updated: 2023/07/03 18:18:11 by yorgopetsas      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,9 @@ NAME =	fractol
 
 MKF =	Makefile
 
-SRC =	src/main.c
+SRC =	src/main.c	\
+			src/tools.c	\
+			src/fractals.c
 
 STR_DIR =	src/
 

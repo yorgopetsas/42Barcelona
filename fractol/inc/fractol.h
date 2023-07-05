@@ -6,9 +6,12 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/06/28 11:17:32 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/07/05 12:53:41 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// REMOVE  ----- LIBRARY FOR PRINTF() 
+#include <stdio.h>
 
 // LIBRARY FOR READ
 #include <unistd.h>
@@ -22,13 +25,10 @@
 // LIBRARY FOR MALLOC() AND ARGUMENTS PARSEMENT
 #include <stdlib.h>
 
-// LIBRARY FOR PRINTF()
-#include <stdio.h>
-
 // MLX LIBRARY 
 #include <mlx/mlx.h>
 
-// IMAGE STRUCT
+// IMAGE STRUCTS
 typedef struct s_data {
 	void	*img;
 	char	*addr;
@@ -40,11 +40,30 @@ typedef struct s_data {
 typedef struct	s_mlx {
 	void	*mlx;
 	void	*win;
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+	int		it_max;
+	int		zoom;
+	double	x1;
+	double	y1;
+	int		color;
 }				t_mlx;
 
-// TOOLS
-// int	yz_close_win(void	*mlx, void	*wdw);
-void 	yz_draw_half_circle(int lines, t_data img);
-void	yz_draw_crl(int radius, t_data img);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
+void	yz_print_mandelbrat(t_data img);
+int		yz_mouse_hook(int keycode, t_mlx *mx);
+int		yz_key_hook(int keycode, t_mlx *mx);
+// MENU
+void	yz_print_menu(t_mlx *mx);
+
+
 // TEMP
+// void	mandelbrot_init(t_mlx *data);
+// void	*mandelbrot(void *tab);
+
+# define WW 500
+# define HH 500
+
