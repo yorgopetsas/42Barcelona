@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/05 18:15:09 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/07/12 18:56:44 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,6 @@ int	main(int argc, char **argv)
 
 	mode = argv[1];
 
-	// TEMP
-	// printf("%d\n", argc);
-	// printf("%s\n", mode);
 
 	yz_check_input(argc, mode);
 	yz_mx_init(&mx);
@@ -83,3 +80,7 @@ int	main(int argc, char **argv)
 
 	mlx_loop(mx.mlx);
 }
+
+// TEMP
+// printf("%d\n", argc);
+// printf("%s\n", mode);

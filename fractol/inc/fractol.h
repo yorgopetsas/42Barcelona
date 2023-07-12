@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/05 18:14:59 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/07/12 19:10:14 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,20 @@ typedef struct	s_mlx {
 	char	set;
 }				t_mlx;
 
+// Menu data
+typedef struct	s_menu {
+	// char	*name;
+	// char	*author;
+	double	nx;
+	double	ny;
+	double	ax;
+	double	ay;	
+	double	mx;
+	double	my;
+	int		color;
+	int		max_iterations;
+}				t_menu;
+
 typedef struct s_fractol {
 	int			isinside;
 	int			color;
@@ -54,12 +68,12 @@ typedef struct s_fractol {
 	double		maxim;
 	double		re_factor;
 	double		im_factor;
-	double		c_re;
-	double 		c_im;
-	double		Z_re;
-	double 		Z_re2;
-	double 		Z_im;
-	double 		Z_im2;
+	double		cr;
+	double 		ci;
+	double		zr;
+	double 		zr2;
+	double 		zi;
+	double 		zi2;
 	unsigned	maxiterations;
 }				t_fractol;
 

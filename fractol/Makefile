@@ -6,7 +6,7 @@
 #    By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/27 10:18:58 by yzisis-p          #+#    #+#              #
-#    Updated: 2023/07/03 18:18:11 by yorgopetsas      ###   ########.fr        #
+#    Updated: 2023/07/12 17:29:22 by yorgopetsas      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ MKF =	Makefile
 
 SRC =	src/main.c	\
 			src/tools.c	\
-			src/fractals.c
+			src/mandelbrod.c \
+			src/menu.c
 
 STR_DIR =	src/
 
