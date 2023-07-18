@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:04:13 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/28 16:14:59 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/04/04 18:07:04 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 ssize_t	startup(char **argv, int idx, int argc)
 {
-	// printf("Number of input is %d\n", argc - 1);
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
@@ -22,13 +21,13 @@ ssize_t	startup(char **argv, int idx, int argc)
 	stack_b = NULL;
 	// RESERVE MEMORY FOR THE STACKS
 	stack_a = stack_mem(stack_a);
+	// stack_b = stack_mem(stack_b);
 	// FILL STACK A 
 	// *stack_a = fill_stack(stack_a, idx, argv);
 	fill_stack(&stack_a, idx, argv, argc);
 	put_index(&stack_a);
 	// CASE SELECTION
 	case_controler(&stack_a, &stack_b, argc);
-
 	// show_stack(&stack_a, &stack_b);
 	// FREE STACKS
 	ft_free_stack(&stack_a);

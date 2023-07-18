@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 11:06:29 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/09 20:13:48 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/04/04 17:49:53 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -33,10 +33,20 @@ void	char_is_digit(char **input, int argc)
 	z = 0;
 	while (x < (argc))
 	{
-		if (ft_strlen(input[x]) > 1)
+		if (ft_strlen(input[x]) == 1)
 		{
-			while (input[x][z] != '\0')
+			if (input[x][0] < '0' || input[x][0] > '9')
 			{
+				write(2, "Error\n", 6);
+				exit (0);
+			}
+		}
+		else if (ft_strlen(input[x]) > 1)
+		{
+			if (input[x][0] == '-')
+				z = 1;
+			while (input[x][z] != '\0')
+			{			
 				if (input[x][z] < '0' || input[x][z] > '9')
 				{
 					write(2, "Error\n", 6);
@@ -82,7 +92,7 @@ int	check_input(int argc, char **argv)
 	x = 1;
 	if (argc == 1)
 		exit (0);
-	if (argc < 3 || argc > 501)
+	else if (argc < 3 || argc > 501)
 		return (0);
 	while (argv[x] != NULL)
 	{
@@ -99,26 +109,3 @@ int	check_input(int argc, char **argv)
 	}
 	return (1);
 }
-
-// int	ft_check_digits(char **argv)
-// {
-// 	int		x;
-// 	int		t;
-// 	x = 1;
-// 	t = 0;
-// 	while (argv[x])
-// 	{
-// 		while (argv[x][t])
-// 		{		
-// 			if (!ft_atoi(&argv[x][t]))
-// 			{
-// 				write(2, "Error\n", 6);
-// 				exit(0);
-// 			}
-// 			t++;
-// 		}
-// 		t = 0;
-// 		x++;
-// 	}
-// 	return (0);
-// }

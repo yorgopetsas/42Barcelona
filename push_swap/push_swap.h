@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:36:39 by yorgopetsas       #+#    #+#             */
-/*   Updated: 2023/03/28 15:22:24 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/04/04 17:03:35 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,9 @@ void	ft_free_stack(t_stack **stack);
 // UTILS
 int		ft_strlen(char *str);
 int		ft_strncmp(char *s1, char *s2);
-int		struct_lent(t_stack **stack);
 int		is_ordered(t_stack **stack);
 int		is_biggiest(t_stack **stack);
+unsigned long	struct_lent(t_stack **stack);
 
 // UTILS2
 void	yz_check_top(t_stack **stack_a, t_stack **stack_b);

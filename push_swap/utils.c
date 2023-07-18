@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 18:28:17 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/03/09 19:02:57 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/04/04 13:59:45 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -37,10 +37,10 @@ int	ft_strlen(char *str)
 	return (cont);
 }
 
-int	struct_lent(t_stack **stack)
+unsigned long	struct_lent(t_stack **stack)
 {
-	t_stack		*tmp;
-	int			i;
+	t_stack			*tmp;
+	unsigned long	i;
 
 	i = 1;
 	tmp = *stack;
@@ -85,6 +85,7 @@ int	is_ordered(t_stack **stack)
 	int			stk_len;
 	t_stack		*tmp;
 
+	x = 0;
 	stk_len = struct_lent(stack);
 	tmp = (*stack);
 	while (x < stk_len - 1)
